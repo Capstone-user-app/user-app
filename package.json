@@ -37,7 +37,6 @@
     ]
   },
   "devDependencies": {
-    "@mocks-server/main": "^4.0.0",
     "msw": "^0.47.3"
   },
   "msw": {
