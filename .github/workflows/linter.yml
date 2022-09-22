@@ -1,56 +1,32 @@
-#################################
-#################################
-## Super Linter GitHub Actions ##
-#################################
-#################################
-name: Lint Code Base
+name: Linter
 
-#
-# Documentation:
-# https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
-#
+on: pull_request
 
-#############################
-# Start the job on all push #
-#############################
-on:
-  push:
-    branches-ignore: [master, main]
-    # Remove the line above to run when pushing to master
-  pull_request:
-    branches: [master, main]
-
-###############
-# Set the Job #
-###############
 jobs:
-  build:
-    # Name the Job
-    name: Lint Code Base
-    # Set the agent to run on
+  lint:
+    name: Linter
+    timeout-minutes: 10
     runs-on: ubuntu-latest
-
-    ##################
-    # Load all steps #
-    ##################
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
-      ##########################
-      # Checkout the code base #
-      ##########################
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
         with:
-          # Full git history is needed to get a proper list of changed files within `super-linter`
-          fetch-depth: 0
-
-      ################################
-      # Run Linter against code base #
-      ################################
-      - name: Lint Code Base
-        uses: github/super-linter@v4
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
-          JAVASCRIPT_DEFAULT_STYLE: prettier
-          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.js
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: yarn install --prefer-offline
+      - name: Run ESLint and prettier
+        run: yarn lint
