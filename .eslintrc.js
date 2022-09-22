@@ -8,7 +8,8 @@ module.exports = {
     'airbnb',
     'plugin:jsx-a11y/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:tailwindcss/recommended'
+    'plugin:tailwindcss/recommended',
+    'prettier'
   ],
   parserOptions: {
     ecmaFeatures: {

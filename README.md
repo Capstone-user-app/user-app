@@ -1,9 +1,8 @@
 <!-- Linter Passing Banner -->
+
 [![GitHub Super-Linter](https://github.com/<OWNER>/<REPOSITORY>/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 # Getting Started with Create React App
-
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
