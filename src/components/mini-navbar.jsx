@@ -10,4 +10,5 @@ function MiniNavbar({OpenClose}){
         </div>
     )
 }
+
 export default MiniNavbar;
