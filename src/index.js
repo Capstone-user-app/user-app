@@ -12,6 +12,7 @@ import {
 import Login from './components/login';
 import Layout from './components/layout';
 import App from './App';
+import Homepage from './components/homepage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,6 +23,7 @@ root.render(
           <Route path='/' element={<App/>} />
           <Route path='/login' element={<Login/>} />
           {/* <Route path='/register' element={<Register/>} /> */}
+          <Route path='/homepage' element={<Homepage/>} />
 
 
 
