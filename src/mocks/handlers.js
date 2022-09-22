@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { rest } from 'msw';
 export const handlers = [
     rest.post('api/login', (req, res, ctx) => {
@@ -31,15 +30,3 @@ export const handlers = [
       )
     }),
   ]
-=======
-import { rest } from 'msw'
-
-export const handlers = [
-    rest.post('api/login', (req, rest, ctx) => {
-
-        return res(
-            ctx.status(200),
-        )
-    })
-]
->>>>>>> 21903dec08abb97256383d0f1546a71751600daa
