@@ -17,8 +17,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "mocks": "mocks-server",
-    "lint": "eslint . && prettier --check .",
-    "lint-fix": "prettier --write . && eslint . --fix"
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src"
   },
   "eslintConfig": {
     "extends": [
