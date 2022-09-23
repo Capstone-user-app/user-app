@@ -2,8 +2,6 @@ import React from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-const a = 'hola';
-
 const App = () => (
   <div className="App">
     <header className="App-header">
