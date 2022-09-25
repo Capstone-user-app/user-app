@@ -22,7 +22,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "mocks": "mocks-server"
+    "mocks": "mocks-server",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src"
   },
   "eslintConfig": {
     "extends": [
@@ -43,8 +45,22 @@
     ]
   },
   "devDependencies": {
+
     "msw": "^0.47.3",
     "tailwindcss": "^3.1.8"
+
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-func": "^0.1.18",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-tailwindcss": "^3.6.2",
+    "msw": "^0.47.3"
+
   },
   "msw": {
     "workerDirectory": "public"
