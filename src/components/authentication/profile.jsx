@@ -6,7 +6,6 @@ const Profile = () => {
     const { user, isAuthenticated, isLoading } = useAuth0()
 
     if (isLoading) {
-      // eslint-disable-next-line react/jsx-filename-extension
       return <div>Loading ...</div>
     }
 

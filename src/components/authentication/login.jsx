@@ -4,8 +4,7 @@ import React from 'react'
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0()
 
-  // eslint-disable-next-line react/button-has-type, react/jsx-filename-extension
-  return <button onClick={() => loginWithRedirect()}>Log In</button>
+  return <button type='button' onClick={() => loginWithRedirect()}>Log In</button>
 }
 
 export default LoginButton

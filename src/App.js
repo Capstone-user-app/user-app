@@ -1,7 +1,7 @@
 import React from 'react'
-import Login from './components/login'
-import Logout from './components/logout'
-import Profile from './components/profile'
+import Login from './components/authentication/login'
+import Logout from './components/authentication/logout'
+import Profile from './components/authentication/profile'
 import logo from './logo.svg'
 import './App.css'
 

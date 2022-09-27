@@ -5,8 +5,7 @@ const LogoutButton = () => {
   const { logout } = useAuth0()
 
   return (
-    // eslint-disable-next-line react/button-has-type, react/jsx-filename-extension
-    <button onClick={() => logout({ returnTo: window.location.origin })}>
+    <button type='button' onClick={() => logout({ returnTo: window.location.origin })}>
       Log Out
     </button>
   )
