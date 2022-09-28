@@ -33,5 +33,22 @@ export const handlers = [
         username: 'admin'
       })
     )
+  }),
+  rest.get('api/purchases', (req, res, ctx) => {
+    // returns a mocked list of purchases
+    const purchases = []
+    for (let i = 0; i < 10; i += 1) {
+      purchases.push({
+        id: i,
+        name: `Purchase ${i}`,
+        warehouseName: `warehouse ${1}`
+      })
+    }
+
+    // return a mocked list of purchases and status 200
+    return res(
+      ctx.status(200),
+      ctx.json(purchases)
+    )
   })
 ]
