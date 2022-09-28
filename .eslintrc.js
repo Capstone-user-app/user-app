@@ -20,7 +20,7 @@ module.exports = {
   },
   plugins: ['react', 'react-func', 'tailwindcss'],
   rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.js'] }],
+    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
     'react/prop-types': 'off',
     'no-console': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
