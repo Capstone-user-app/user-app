@@ -50,7 +50,7 @@ export const handlers = [
         ],
         orden_venta: '123456',
         fecha_venta: '2020-01-01',
-        estado_venta: 'Pendiente',
+        estado_venta: 'En preparación',
         marca: 'Lippi',
         imagen: 'https://picsum.photos/200/300'
       },
@@ -65,9 +65,47 @@ export const handlers = [
             price: 400
           }
         ],
-        orden_venta: '123457',
+        orden_venta: '193457',
         fecha_venta: '2020-01-02',
-        estado_venta: 'Pendiente',
+        estado_venta: 'Entregado',
+        marca: 'Lippi',
+        imagen: 'https://picsum.photos/200/300'
+      },
+      {
+        products: [
+          {
+            name: 'Product 5',
+            price: 500
+          },
+          {
+            name: 'Product 6',
+            price: 600
+          },
+          {
+            name: 'Product 7',
+            price: 600
+          },
+          {
+            name: 'Product 8',
+            price: 600
+          }
+        ],
+        orden_venta: '123787',
+        fecha_venta: '2020-03-15',
+        estado_venta: 'Listo para ser retirado',
+        marca: 'Lippi',
+        imagen: 'https://picsum.photos/200/300'
+      },
+      {
+        products: [
+          {
+            name: 'Product 9',
+            price: 900
+          }
+        ],
+        orden_venta: '141796',
+        fecha_venta: '2020-09-01',
+        estado_venta: 'Entregado',
         marca: 'Lippi',
         imagen: 'https://picsum.photos/200/300'
       }

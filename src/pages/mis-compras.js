@@ -16,17 +16,16 @@ const MisCompras = () => {
 
   // rendererizar la lista de compras
   return (
-    <div className='bg-blue-500 p-5'>
-      <div className='rounded-2xl bg-white p-5 sm:bg-blue-500'>
-        <div className='rounded-lg text-center text-2xl
-        text-blue-500 sm:text-left sm:text-white'>Mis Compras</div>
-          <div  >
+    <div className='bg-azul p-3'>
+      <div className='rounded-2xl p-3'>
+        <div className='text-center text-2xl text-white md:text-3xl'>Mis Compras</div>
+          <div className="flex flex-col justify-center md:text-xl" >
             {purchases.map((purchase) => (
-            <div key={purchase.orden_venta} className="m-2 rounded-md bg-white flex flex-row ">
-              <div>
-                <img className="rounded-md w-40 md:w-20 lg:w-20 " src = {purchase.imagen} alt = 'hola'/>
+            <div className="m-6 rounded-md bg-white flex flex-row">
+              <div className="my-16 ml-6  md:my-24">
+                <img className="rounded-md w-32 h-24 md:w-40 md:h-32 md:ml-8" src = {purchase.imagen} alt = 'hola'/>
               </div>
-              <div className="">
+              <div className="m-6 md:p-8">
               <b>Productos:</b>
                 {purchase.products.map((product) => (
                   <div >
