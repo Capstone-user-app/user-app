@@ -86,7 +86,7 @@ export const handlers = [
             price: 600
           },
           {
-            name: 'Product 8',
+            name: '   ...',
             price: 600
           }
         ],
