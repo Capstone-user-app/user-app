@@ -36,14 +36,42 @@ export const handlers = [
   }),
   rest.get('api/purchases', (req, res, ctx) => {
     // returns a mocked list of purchases
-    const purchases = []
-    for (let i = 0; i < 10; i += 1) {
-      purchases.push({
-        id: i,
-        name: `Purchase ${i}`,
-        warehouseName: `warehouse ${1}`
-      })
-    }
+    const purchases = [
+      {
+        products: [
+          {
+            name: 'Product 1',
+            price: 100
+          },
+          {
+            name: 'Product 2',
+            price: 200
+          }
+        ],
+        orden_venta: '123456',
+        fecha_venta: '2020-01-01',
+        estado_venta: 'Pendiente',
+        marca: 'Lippi',
+        imagen: 'https://picsum.photos/200/300'
+      },
+      {
+        products: [
+          {
+            name: 'Product 3',
+            price: 300
+          },
+          {
+            name: 'Product 4',
+            price: 400
+          }
+        ],
+        orden_venta: '123457',
+        fecha_venta: '2020-01-02',
+        estado_venta: 'Pendiente',
+        marca: 'Lippi',
+        imagen: 'https://picsum.photos/200/300'
+      }
+    ]
 
     // return a mocked list of purchases and status 200
     return res(
