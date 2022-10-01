@@ -36,85 +36,159 @@ export const handlers = [
   }),
   rest.get('api/purchases', (req, res, ctx) => {
     // returns a mocked list of purchases
-    const purchases = [
+    const sales = [
       {
+        packageId: 'de933a81-3549-47f8-a21e-3d78f6aa8764',
+        pinflagId: 'y676au',
+        saleOrder: '001234567',
+        packageStatus: 7,
+        state: 'Valparaíso',
+        stateId: 5,
+        city: 'El Tabo',
+        cityId: 5605,
+        clickAndCollect: true,
+        evidencePhoto: null,
+        height: 12,
+        width: 12,
+        length: 30,
+        position: null,
+        warehouseName: 'Bodega testing',
+        warehouseId: 15,
+        deliveryAddress: 'La direccion 1234',
+        deliveryInstructions: null,
+        clientEmail: 'diego.valdes@lippioutdoor.com',
+        clientName: 'Diego valdes ',
+        clientLastName: '',
+        clientPhone: '+56962474699',
         products: [
           {
-            name: 'Product 1',
-            price: 100
+            productName: 'Polera roja',
+            sku: 1111,
+            price: 1222, //
+            weight: 12,
+            photoUrl: [
+              {
+                'URLIMAGEN': 'https://via.placeholder.com/200x120.png'
+              }
+            ]
           },
           {
-            name: 'Product 2',
-            price: 200
+            productName: 'Polera negra',
+            sku: '1112',
+            price: 1222,
+            weight: 12,
+            photoUrl: [
+              {
+                'URLIMAGEN': 'https://via.placeholder.com/200x120.png'
+              },
+              {
+                'URLIMAGEN': 'https://via.placeholder.com/200x120.png'
+              }
+            ]
           }
         ],
-        orden_venta: '123456',
-        fecha_venta: '2020-01-01',
-        estado_venta: 'En preparación',
-        marca: 'Lippi',
-        imagen: 'https://picsum.photos/200/300'
+        packageHistory: [
+          {
+            packageStatus: 1,
+            date: '2022-03-11T02:27:35.243Z'
+          },
+          {
+            packageStatus: 2,
+            date: '2022-03-11T02:30:26.493Z'
+          },
+          {
+            packageStatus: 3,
+            date: '2022-03-11T02:31:25.020Z'
+          },
+          {
+            packageStatus: 4,
+            date: '2022-03-11T02:35:56.873Z'
+          },
+          {
+            packageStatus: 7,
+            date: '2022-03-11T02:38:37.067Z'
+          }
+        ]
       },
       {
+        packageId: 'de933a81-3549-47f8-a21e-3d78f6aa8764',
+        pinflagId: 'y676au',
+        saleOrder: '001234567',
+        packageStatus: 7,
+        state: 'Valparaíso',
+        stateId: 5,
+        city: 'El Tabo',
+        cityId: 5605,
+        clickAndCollect: true,
+        evidencePhoto: null,
+        height: 12,
+        width: 12,
+        length: 30,
+        position: null,
+        warehouseName: 'Bodega testing',
+        warehouseId: 15,
+        deliveryAddress: 'La direccion 1234',
+        deliveryInstructions: null,
+        clientEmail: 'diego.valdes@lippioutdoor.com',
+        clientName: 'Diego valdes ',
+        clientLastName: '',
+        clientPhone: '+56962474699',
         products: [
           {
-            name: 'Product 3',
-            price: 300
+            productName: 'Polera roja',
+            sku: 1111,
+            price: 1222, //
+            weight: 12,
+            photoUrl: [
+              {
+                'URLIMAGEN': 'https://via.placeholder.com/200x120.png'
+              }
+            ]
           },
           {
-            name: 'Product 4',
-            price: 400
+            productName: 'Polera negra',
+            sku: '1112',
+            price: 1222,
+            weight: 12,
+            photoUrl: [
+              {
+                'URLIMAGEN': 'https://via.placeholder.com/200x120.png'
+              },
+              {
+                'URLIMAGEN': 'https://via.placeholder.com/200x120.png'
+              }
+            ]
           }
         ],
-        orden_venta: '193457',
-        fecha_venta: '2020-01-02',
-        estado_venta: 'Entregado',
-        marca: 'Lippi',
-        imagen: 'https://picsum.photos/200/300'
-      },
-      {
-        products: [
+        packageHistory: [
           {
-            name: 'Product 5',
-            price: 500
+            packageStatus: 1,
+            date: '2022-03-11T02:27:35.243Z'
           },
           {
-            name: 'Product 6',
-            price: 600
+            packageStatus: 2,
+            date: '2022-03-11T02:30:26.493Z'
           },
           {
-            name: 'Product 7',
-            price: 600
+            packageStatus: 3,
+            date: '2022-03-11T02:31:25.020Z'
           },
           {
-            name: '   ...',
-            price: 600
+            packageStatus: 4,
+            date: '2022-03-11T02:35:56.873Z'
+          },
+          {
+            packageStatus: 7,
+            date: '2022-03-11T02:38:37.067Z'
           }
-        ],
-        orden_venta: '123787',
-        fecha_venta: '2020-03-15',
-        estado_venta: 'Listo para ser retirado',
-        marca: 'Lippi',
-        imagen: 'https://picsum.photos/200/300'
-      },
-      {
-        products: [
-          {
-            name: 'Product 9',
-            price: 900
-          }
-        ],
-        orden_venta: '141796',
-        fecha_venta: '2020-09-01',
-        estado_venta: 'Entregado',
-        marca: 'Lippi',
-        imagen: 'https://picsum.photos/200/300'
+        ]
       }
     ]
 
     // return a mocked list of purchases and status 200
     return res(
       ctx.status(200),
-      ctx.json(purchases)
+      ctx.json(sales)
     )
   })
 ]
