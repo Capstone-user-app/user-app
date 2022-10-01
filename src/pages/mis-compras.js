@@ -7,10 +7,9 @@ const MisCompras = () => {
 
   // petición a la api de compras para el usuario actual
   useEffect(() => {
-    fetch('api/purchases')
+    fetch('api/purchases') //trae un array con todo los pedidos en json
       .then((res) => res.json())
       .then((resJson) => {
-        console.log(resJson)
         setPurchase(resJson)
       })
   }, [])
@@ -27,9 +26,11 @@ const MisCompras = () => {
         <div className="flex flex-col justify-center md:text-xl" >
             {purchases.map((purchase) => (
             <div className="m-6 rounded-md bg-white flex flex-row">
+
               <div className="my-16 ml-6  md:my-24">
                 <img className="rounded-md w-32 h-24 md:w-40 md:h-32 md:ml-8" src = {purchase.imagen} alt = 'hola'/>
               </div>
+
               <div className="m-6 md:p-8">
               <b>Productos:</b>
                 {purchase.products.map((product) => (
@@ -42,6 +43,7 @@ const MisCompras = () => {
                 <b>Fecha de compra:</b>
                 <p>{purchase.fecha_venta}</p>
               </div>
+              
             </div>
           ))}
         </div>
