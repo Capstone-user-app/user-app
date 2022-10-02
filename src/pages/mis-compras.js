@@ -7,7 +7,7 @@ const MisCompras = () => {
 
   // petición a la api de compras para el usuario actual
   useEffect(() => {
-    fetch('api/purchases') //trae un array con todo los pedidos en json
+    fetch('api/purchases')
       .then((res) => res.json())
       .then((resJson) => {
         setPurchase(resJson)
@@ -19,33 +19,38 @@ const MisCompras = () => {
     <div className='bg-azul p-3'>
       <div className='rounded-2xl p-3'>
         <div className='text-center text-2xl text-white mb-8 md:text-3xl'>Mis Compras</div>
-        <div className="flex flex-row mb-4 ">
+        <div className="flex flex-row mb-4">
           <Button className='basis-1/2' >Fecha</Button>
           <Button className='basis-1/2' >Ecommerce</Button>
         </div>
         <div className="flex flex-col justify-center md:text-xl" >
             {purchases.map((purchase) => (
-            <div className="m-6 rounded-md bg-white flex flex-row">
-
-              <div className="my-16 ml-6  md:my-24">
-                <img className="rounded-md w-32 h-24 md:w-40 md:h-32 md:ml-8" src = {purchase.imagen} alt = 'hola'/>
-              </div>
-
-              <div className="m-6 md:p-8">
-              <b>Productos:</b>
-                {purchase.products.map((product) => (
-                  <div >
-                    <p>{product.name}</p>
+              <div className="m-3 rounded-md bg-white flex flex-row justify-around text-[10px]">
+                <div className="my-16 ml-6  md:my-24">
+                  <p>ACA VAN LAS IMAGENES</p>
+                </div>
+                <div className="flex flex-col m-6 md:p-8">
+                  <div>
+                    <b>Estado: {purchase.packageStatus}</b>
+                    <b>Fecha del estado</b>
                   </div>
-                ))}
-                <b>Orden de compra:</b>
-                <p>{purchase.orden_venta}</p>
-                <b>Fecha de compra:</b>
-                <p>{purchase.fecha_venta}</p>
+                  <div>
+                    <b>Productos:</b>
+                      {purchase.products.map((p) => (
+                        <p>{p.productName}</p>
+                      ))}
+                  </div>
+                  <div>
+                    <b>Orden de compra:</b>
+                    <p>{purchase.saleOrder}</p>
+                    <b>Fecha de compra:</b>
+                  </div>
+                </div>
+                <div className="my-16 ml-6  md:my-24">
+                  <p>ACA VA LA FLECHA</p>
+                </div>
               </div>
-              
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>
