@@ -27,7 +27,7 @@ module.exports = {
     'react-func/max-lines-per-function': [
       'warn',
       {
-        max: 20,
+        max: 200,
         skipBlankLines: true,
         skipComments: true,
         IIFEs: true
@@ -62,7 +62,7 @@ module.exports = {
     'max-len': [
       'error',
       {
-        code: 100,
+        code: 150,
         ignoreUrls: true,
         ignoreStrings: true,
         ignoreComments: true
