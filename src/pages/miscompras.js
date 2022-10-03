@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import {Button} from '@mui/material'
 import InfoState from '../components/infoState'
 
-const MisCompras = () => {
+const DetalleCompra = () => {
   const [purchases, setPurchase] = useState([])
   // petición a la api de compras para el usuario actual
   useEffect(() => {
@@ -55,4 +55,4 @@ const MisCompras = () => {
   )
 }
 
-export default MisCompras
+export default DetalleCompra
