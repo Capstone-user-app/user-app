@@ -18,6 +18,8 @@ import SendIcon from '@mui/icons-material/Send';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
+import ErrorIcon from '@mui/icons-material/Error';
+import AnnouncementIcon from '@mui/icons-material/Announcement';
 
 
 
@@ -109,20 +111,32 @@ const DetalleCompra = () => {
             </Typography>
           </Container>
 
-          <Container
-          className="flex shadow-2xl bg-white m-4 rounded"
-          
-          >
-            
+          <Container className="flex shadow-2xl bg-white m-4 rounded">
             <Typography variant="h6" component="h1" gutterBottom>
                 tercer container, link googlemaps estados paquete
             </Typography>
           </Container>
 
+          <Container className="flex shadow-2xl bg-white m-4 rounded">
+            <Typography variant="h6" component="h1" gutterBottom>
+                Cuarto container, Mapa de estado
+            </Typography>
+          </Container>
+
+        
+          <Container className="flex shadow-2xl bg-white m-4 rounded">
+            <Typography variant="h6" component="h1" gutterBottom>
+                <ListItemButton>
+                    <ListItemIcon>
+                        <AnnouncementIcon />
+                    </ListItemIcon>
+                <ListItemText primary="Ayuda con la compra" />
+                </ListItemButton>
+            </Typography>
+          </Container>
+
           <Container
-          className="flex shadow-2xl bg-white m-4 rounded"
-          
-          >
+          className="flex shadow-2xl bg-white m-4 rounded">
             
             <Typography variant="h6" component="h1" gutterBottom>
                 <List
