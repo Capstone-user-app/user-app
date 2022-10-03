@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import {Button, Box, Typography} from '@mui/material'
+import {Button, Box, Typography, Grid} from '@mui/material'
 import InfoState from '../components/infoState'
 import { Container } from '@mui/system'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -17,45 +17,62 @@ const DetalleCompra = () => {
         setPurchase(resJson)
       })
   }, [])
+
   // rendererizar la lista de compras
+  
   return (
-    <Container 
-    className="bg-gray-100"
+    <>
+    <Container
+    className="bg-blue-50"
     >
+
       <Container 
-      className="my-4"
+      className="flex shadow-2xl bg-white m-4 rounded"
       >
         <Typography variant="h6" component="h1" gutterBottom>
           Compras > Estado de mi compra
         </Typography>
-        
       </Container>
 
-        
+        <Grid 
+        container
+        className='w-full bg-red-50'
+        >
 
-      <Container>
-        
-        <Typography variant="h6" component="h1" gutterBottom>
-            primer container
+          <Container
+          className="flex shadow-2xl bg-white m-4 rounded"
+          
+          >
+            
+            <Typography variant="h6" component="h1" gutterBottom>
+                primer container
+            </Typography>
+          </Container>
+
+          <Container
+          className="flex shadow-2xl bg-white m-4 rounded"
+          >
+            
+            <Typography variant="h6" component="h1" gutterBottom>
                 
-        </Typography>
-      </Container>
+                <InfoState states={purchases[0]?.packageHistory} stateActual={purchases[0]?.packageStatus}/>
+                {purchases[0]?.packageStatus}
+            </Typography>
+          </Container>
 
-      <Container>
-        
-        <Typography variant="h6" component="h1" gutterBottom>
-            segundo container
-        </Typography>
-      </Container>
+          <Container
+          className="flex shadow-2xl bg-white m-4 rounded"
+          
+          >
+            
+            <Typography variant="h6" component="h1" gutterBottom>
+                tercer container, link googlemaps estados paquete
+            </Typography>
+          </Container>
 
-      <Container>
-        
-        <Typography variant="h6" component="h1" gutterBottom>
-            tercer container, link googlemaps estados paquete
-        </Typography>
-      </Container>
-
+      </Grid>
     </Container>
+    </>
 
 
 
