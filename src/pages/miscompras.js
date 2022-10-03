@@ -45,7 +45,7 @@ const DetalleCompra = () => {
                   </div>
                 </div>
                 <div className="my-16 ml-6  md:my-24">
-                  <p>ACA VA LA FLECHA</p>
+                  <p>ACA VA LA FLECHcdA</p>
                 </div>
               </div>
             ))}
