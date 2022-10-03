@@ -50,7 +50,7 @@ const DetalleCompra = () => {
 
       <Container>
         
-        <Typography variant="h2" component="h1" gutterBottom>
+        <Typography variant="h6" component="h1" gutterBottom>
             tercer container, link googlemaps estados paquete
         </Typography>
       </Container>
