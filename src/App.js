@@ -1,9 +1,9 @@
 import React from 'react'
-import MisCompras from './pages/mis-compras'
+import DetalleCompra from './pages/purchase-details'
 
 const App = () => (
   <div>
-    <MisCompras />
+    <DetalleCompra />
   </div>
 )
 
