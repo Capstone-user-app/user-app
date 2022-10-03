@@ -1,5 +1,28 @@
 <!-- Linter Passing Banner -->
 
+# Guidelines de desarrollo y estilo
+
+1. Al estar desarrollando un componente nuevo, subir al slack un screenshot y ojalá una pequeña descripción
+2. Seguir la estructura de la carpeta
+3. Revisar estar al día con el repositorio base, en especial cuando hagan pull requests
+4. Al colocar páginas, no colocarlas directamente, sino en una caperta que las agrupe
+5. Seguir la nomeclatura de platanus al hacer commits, branches y PRs (https://la-guia.platan.us/setup/proyectos/git)
+
+## Mobile first ( en revisión )
+
+Se utilizarán los breakpoints de tailwind, teniendo en cuenta que al ir agrandando progresivamente se debe ver bien.
+
+1. Usar md para celular grande.
+
+## Convenciones para componentes
+
+1. Colocar componentes dentro de su respectiva carpeta (mobile, web o shared, para componentes compartidos)
+2. Ocupar props dentro de lo posible.
+
+## Tipografía (rellenar)
+
+Rellenar
+
 [![GitHub Super-Linter](https://github.com/<OWNER>/<REPOSITORY>/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 # Getting Started with Create React App
