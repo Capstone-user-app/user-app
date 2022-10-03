@@ -1,38 +1,7 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import {Button} from '@mui/material'
-/*
 import InfoState from '../components/infoState'
-
- const State = ({ packageHistory, stateActual }) => {
-    for( let i = 0; i < packageHistory.length; i +=1){
-      const {packageStatus, date} = packageHistory[i]
-      let text = ''
-      let color = 'blue'
-      if (packageStatus === 1 && stateActual === 1) {
-        text = 'Comprado'
-        color = 'green'
-        return <InfoState text={text} date={date} color={color}/>
-      }
-      if (packageStatus === 2 && stateActual === 2) {
-        text = 'Procesado'
-        return <InfoState text={text} date={date} color={color}/>
-      }
-      if (packageStatus === 3 && stateActual === 3) {
-        text = 'En tránsito'
-        return <InfoState text={text} date={date} color={color}/>
-      }
-      if (packageStatus === 4 && stateActual === 4) {
-        text = 'Recepcionado por el punto'
-        return <InfoState text={text} date={date} color={color}/>
-      }
-      if (packageStatus === 7 && stateActual === 7) {
-        text = 'Entregado al cliente'
-        return <InfoState text={text} date={date} color={color}/>
-      }
-    }
-      return null
-} */
 
 const MisCompras = () => {
   const [purchases, setPurchase] = useState([])
@@ -48,20 +17,20 @@ const MisCompras = () => {
   return (
     <div className='bg-azul p-3'>
       <div className='rounded-2xl p-3'>
-        <div className='text-center text-2xl text-white mb-8 md:text-3xl'>Mis Compras</div>
-        <div className='flex flex-row mb-4'>
+        <div className='mb-8 text-center text-2xl text-white md:text-3xl'>Mis Compras</div>
+        <div className='mb-4 flex flex-row'>
           <Button className='basis-1/2' >Fecha</Button>
           <Button className='basis-1/2' >Ecommerce</Button>
         </div>
         <div className='flex flex-col justify-center md:text-xl' >
             {purchases.map((purchase) => (
-              <div className="m-3 rounded-md bg-white flex flex-row justify-around text-[10px]">
+              <div className="m-3 flex flex-row justify-around rounded-md bg-white text-[10px]">
                 <div className="my-16 ml-6  md:my-24">
                   <p>ACA VAN LAS IMAGENES</p>
                 </div>
-                <div className="flex flex-col m-6 md:p-8">
+                <div className="m-6 flex flex-col md:p-8">
                   <div>
-                    <b>Estado:</b>
+                    <InfoState states={purchase.packageHistory} stateActual={purchase.packageStatus}/>
                   </div>
                   <div>
                     <b>Productos:</b>
