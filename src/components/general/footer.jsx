@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function Footer() {
-  return (
-    <footer class="p-4 bg-black shadow md:flex md:items-center md:justify-between md:p-4 text-white">
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">footer info
+const Footer = () => (
+    <footer className="bg-black p-4 text-white shadow md:flex md:items-center md:justify-between md:p-4">
+    <span className="text-sm sm:text-center">footer info
     </span>
 
 </footer>
   )
-}
+
+export default Footer

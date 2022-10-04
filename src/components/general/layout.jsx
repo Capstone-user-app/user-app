@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from "react";
-import Navbar from "./navbar";
-import MiniNavbar from "./mini-navbar";
+import React, { useEffect, useState } from 'react'
+import Navbar from './navbar'
+import MiniNavbar from './mini-navbar'
 
-function Layout({children}){
+const Layout = ({children}) => {
 
-    const[isOpen, setIsOpen] = useState(false);
+    const[isOpen, setIsOpen] = useState(false)
 
     useEffect(() => {
         const hideMenu = () => {
             if (window.innerWidth > 768 && isOpen) {
-                setIsOpen(false);
+                setIsOpen(false)
             };
-        };
-        window.addEventListener("resize", hideMenu)
+        }
+        window.addEventListener('resize', hideMenu)
 
         return () => {
-            window.removeEventListener("resize", hideMenu)
-        };
-    });
+            window.removeEventListener('resize', hideMenu)
+        }
+    })
 
     const toggleOpen = () => {
         setIsOpen(!isOpen)
-    };
+    }
 
     return (
         <div className="h-screen">
@@ -33,4 +33,4 @@ function Layout({children}){
 
 }
 
-export default Layout;
+export default Layout
