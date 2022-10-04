@@ -159,7 +159,7 @@ const DetalleCompra = () => {
           <Container
           className="flex shadow-2xl bg-white m-4 rounded">
             
-            <Typography variant="h6" component="h1" gutterBottom>
+            <Typography variant="h10" component="h1" gutterBottom>
                 <List
                     sx={{ width: '100%', bgcolor: 'background.paper' }}
                     component="nav">
@@ -169,26 +169,61 @@ const DetalleCompra = () => {
                     </ListItemButton>
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <ListItemText secondary= "Fecha de compra:"/>
+                            <Grid container direction="row" className="flex justify-between ...">
+                                <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                                    Fecha de venta
+                                </Grid>
+                                <Grid item sx={{textAlign:"right", alignItems:"right"}}>
+                                    12 de Septiembre de 2022
+                                </Grid>                    
+                            </Grid>
                             <Divider variant="middle" />
 
-                                {/* <Grid container direction="row" >
+                                <Grid container direction="row" className="flex justify-between ...">
                                     <Grid item sx={{textAlign:"left", alignItems:"left"}}>
-                                        Hola
+                                        Producto 1
                                     </Grid>
                                     <Grid item sx={{textAlign:"right", alignItems:"right"}}>
-                                        Hola
+                                        $12.000
                                     </Grid>                    
-                                </Grid> */}
-                            
-                            <ListItemText  secondary= "Producto 1"/>
-                            <ListItemText secondary= "Producto 2"/>
-                            <ListItemText secondary= "Producto 3"/>
+                                </Grid>
+
+                                <Grid container direction="row" className="flex justify-between ...">
+                                    <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                                        Producto 2
+                                    </Grid>
+                                    <Grid item sx={{textAlign:"right", alignItems:"right"}}>
+                                        $10.000
+                                    </Grid>                    
+                                </Grid>
+
+                                <Grid container direction="row" className="flex justify-between ...">
+                                    <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                                        Producto 3
+                                    </Grid>
+                                    <Grid item sx={{textAlign:"right", alignItems:"right"}}>
+                                        $14.000
+                                    </Grid>                    
+                                </Grid>
                             <Divider variant="middle" />
-                            <ListItemText secondary= "Envío"/>
+                                <Grid container direction="row" className="flex justify-between ...">
+                                    <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                                        Envío:
+                                    </Grid>
+                                    <Grid item sx={{textAlign:"right", alignItems:"right"}}>
+                                        $2.000
+                                    </Grid>                    
+                                </Grid>
                         </List>
                         <Divider variant="middle" />
-                        Total: $35.000
+                        <Grid container direction="row" className="flex justify-between ... font-bold">
+                            <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                                Total
+                            </Grid>
+                            <Grid item sx={{textAlign:"right", alignItems:"right"}} >
+                                $38.000
+                            </Grid>                    
+                        </Grid>
                     </Collapse>
                 </List>
             </Typography>
