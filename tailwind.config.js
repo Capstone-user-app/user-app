@@ -1,21 +1,14 @@
-const colors = require('tailwindcss/colors')
-  
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {
-      colors: {
-        // Paleta de colores personalizada
-         'azul':'#173554',
-         'celeste':'#33CCCC',
-        }
-    },
-    
+    extend: {},
+    colors: {
+      lblue: '#33CCCC',
+      blue: '#173554',
+      black: '#0C0f0F',
+      white: '#FCF7F8',
+      brown: '#928779',
+    }
   },
-  
   plugins: [],
-  
 }
-
