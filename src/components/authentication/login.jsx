@@ -1,11 +1,10 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import React from 'react'
-import { Button } from '@mui/material'
 
-const LoginButton = () => {
+const LoginButton = (classN) => {
   const { loginWithRedirect } = useAuth0()
 
-  return <Button onClick={() => loginWithRedirect()}>Iniciar sesión</Button>
+  return <button type="button" onClick={() => loginWithRedirect()} className={`${classN}`}>Iniciar sesión</button>
 }
 
 export default LoginButton

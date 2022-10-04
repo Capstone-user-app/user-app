@@ -1,14 +1,13 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import React from 'react'
-import { Button } from '@mui/material'
 
-const LogoutButton = () => {
+const LogoutButton = (classN) => {
   const { logout } = useAuth0()
 
   return (
-    <Button onClick={() => logout({ returnTo: window.location.origin })}>
+    <button type="button" onClick={() => logout({ returnTo: window.location.origin })} className={`${classN}`}>
       Cerrar sesión
-    </Button>
+    </button>
   )
 }
 
