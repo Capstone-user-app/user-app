@@ -121,7 +121,7 @@ const DetalleCompra = () => {
 
           <Container className="flex shadow-md bg-white m-4 rounded">
             <Typography variant="h6" component="h1" gutterBottom>
-                <Box sx={{ width: '100%' }} padding={1}>
+                <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
                     <Stepper activeStep={1} alternativeLabel>
                         {steps.map((label) => (
                         <Step key={label}>
@@ -129,8 +129,12 @@ const DetalleCompra = () => {
                         </Step>
                         ))}
                     </Stepper>
+                    
                 </Box>
             </Typography>
+            <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
+                <Button variant="contained" disabled>Genera QR para el retiro del pedido</Button>
+            </Box>
           </Container>
 
         
@@ -167,6 +171,9 @@ const DetalleCompra = () => {
                               <ListItemText secondary= {product.productName}/>
                             ))} */}
                             {/* <ListItemText secondary= "Producto 2"/>
+                            
+                            <ListItemText  secondary= "Producto 1"/>
+                            <ListItemText secondary= "Producto 2"/>
                             <ListItemText secondary= "Producto 3"/>
                             <ListItemText secondary= "Producto 4"/> */}
                         </List>
