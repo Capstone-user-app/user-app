@@ -4,7 +4,7 @@ import Logout from './components/authentication/logout'
 import Profile from './components/authentication/profile'
 import logo from './assets/logo_pinflag_vertical.png'
 import './App.css'
-import Footer from "./components/general/footer";
+import Footer from './components/general/footer'
 
 
 const App = () => (
