@@ -2,8 +2,16 @@ import { Auth0Provider } from '@auth0/auth0-react'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+
+import Layout from './components/general/layout'
+import Login from './components/authentication/login'
 
 
 if (process.env.NODE_ENV === 'development') {
@@ -21,7 +29,16 @@ root.render(
     audience="https://9shjd4c13a.execute-api.sa-east-1.amazonaws.com/dev"
     scope="read:current_user update:current_user_metadata hello"
   >
-    <App />
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<App/>} />
+          <Route path='/login' element={<Login/>} />
+          {/* <Route path='/register' element={<Register/>} /> */}
+
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   </Auth0Provider>
 )
 
