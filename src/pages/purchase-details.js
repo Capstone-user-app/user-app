@@ -121,15 +121,15 @@ const DetalleCompra = () => {
 
           <Container className="flex shadow-md bg-white m-4 rounded">
             <Typography variant="h6" component="h1" gutterBottom>
-            <Box sx={{ width: '100%' }} padding={1}>
-                <Stepper activeStep={1} alternativeLabel>
-                    {steps.map((label) => (
-                    <Step key={label}>
-                        <StepLabel>{label}</StepLabel>
-                    </Step>
-                    ))}
-                </Stepper>
-            </Box>
+                <Box sx={{ width: '100%' }} padding={1}>
+                    <Stepper activeStep={1} alternativeLabel>
+                        {steps.map((label) => (
+                        <Step key={label}>
+                            <StepLabel>{label}</StepLabel>
+                        </Step>
+                        ))}
+                    </Stepper>
+                </Box>
             </Typography>
           </Container>
 
