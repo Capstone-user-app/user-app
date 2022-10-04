@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import {Button, Box, Typography, Grid, Stack, Avatar} from '@mui/material'
+import {Button, Box, Typography, Grid, Stack, Avatar, TextField, Divider} from '@mui/material'
 import InfoState from '../components/infoState'
 import { Container } from '@mui/system'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -20,13 +20,10 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
 import ErrorIcon from '@mui/icons-material/Error';
 import AnnouncementIcon from '@mui/icons-material/Announcement';
-<<<<<<< HEAD
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-=======
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
->>>>>>> style(style/purchasedetails): new styles
 
 
 
@@ -171,12 +168,23 @@ const DetalleCompra = () => {
                               <ListItemText secondary= {product.productName}/>
                             ))} */}
                             {/* <ListItemText secondary= "Producto 2"/>
+                            <Divider variant="middle" />
+
+                                {/* <Grid container direction="row" >
+                                    <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                                        Hola
+                                    </Grid>
+                                    <Grid item sx={{textAlign:"right", alignItems:"right"}}>
+                                        Hola
+                                    </Grid>                    
+                                </Grid> */}
                             
                             <ListItemText  secondary= "Producto 1"/>
                             <ListItemText secondary= "Producto 2"/>
                             <ListItemText secondary= "Producto 3"/>
-                            <ListItemText secondary= "Producto 4"/> */}
+                            <ListItemText secondary= "Producto 4"/>
                         </List>
+                        <Divider variant="middle" />
                         Total: $35.000
                     </Collapse>
                 </List>
