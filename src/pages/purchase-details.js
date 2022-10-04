@@ -112,14 +112,15 @@ const DetalleCompra = () => {
 
           <Container className="flex shadow-2xl bg-white m-4 rounded">
             <Typography variant="h6" component="h1" gutterBottom>
-                {purchases.map((purchase) => (
-                    purchase.packageStatus
-                )
-                )}
-                {purchases.map((purchase) => (
-                    purchase.Ecommerce
-                )
-                )}
+
+            {purchases?.map((purchase) => (
+              <Container className="m-3 flex flex-row justify-around rounded-md bg-white text-[10px]">
+                    <b>Productos:</b>
+                      {purchase.products.map((p) => (
+                        <p>{p.productName}</p>
+                      ))}
+              </Container>
+            ))}
             </Typography>
           </Container>
 
