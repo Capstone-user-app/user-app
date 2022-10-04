@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import {Button, Box, Typography, Grid, Stack, Avatar} from '@mui/material'
+import {Button, Box, Typography, Grid, Stack, Avatar, TextField, Divider} from '@mui/material'
 import InfoState from '../components/infoState'
 import { Container } from '@mui/system'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -161,7 +161,7 @@ const DetalleCompra = () => {
             
             <Typography variant="h6" component="h1" gutterBottom>
                 <List
-                    sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+                    sx={{ width: '100%', bgcolor: 'background.paper' }}
                     component="nav">
                     <ListItemButton onClick={handleClick}>
                         <ListItemText primary="Detalle de la compra" />
@@ -170,12 +170,24 @@ const DetalleCompra = () => {
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
                             <ListItemText secondary= "Fecha de compra:"/>
+                            <Divider variant="middle" />
+
+                                {/* <Grid container direction="row" >
+                                    <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                                        Hola
+                                    </Grid>
+                                    <Grid item sx={{textAlign:"right", alignItems:"right"}}>
+                                        Hola
+                                    </Grid>                    
+                                </Grid> */}
                             
                             <ListItemText  secondary= "Producto 1"/>
                             <ListItemText secondary= "Producto 2"/>
                             <ListItemText secondary= "Producto 3"/>
-                            <ListItemText secondary= "Producto 4"/>
+                            <Divider variant="middle" />
+                            <ListItemText secondary= "Envío"/>
                         </List>
+                        <Divider variant="middle" />
                         Total: $35.000
                     </Collapse>
                 </List>
