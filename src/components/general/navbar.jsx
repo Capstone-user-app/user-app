@@ -2,15 +2,22 @@ import React from 'react'
 import { Link  } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import logo from '../../assets/logo_pinflag_vertical.png'
+import { useAuth0 } from "@auth0/auth0-react";
 
 
-const Navbar = ({OpenClose}) => (
+const Navbar = ({OpenClose}) => {
+
+    const { user, isAuthenticated, isLoading } = useAuth0();
+
+
+    return (
         <nav className="relative flex h-16 items-center justify-between bg-white text-black shadow-lg">
 
             <div className="ml-6 flex h-12 w-12 flex-wrap place-content-center">
                 <Link to="/" className="">
                     <img src={logo} className="object-scale-down" alt="logo" />
                 </Link>
+
             </div>
 
             <Box className="cursor-pointer px-4 md:hidden" onClick={OpenClose}>
@@ -28,5 +35,7 @@ const Navbar = ({OpenClose}) => (
 
         </nav>
     )
+}
+
 
 export default Navbar
