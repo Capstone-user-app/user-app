@@ -10,6 +10,7 @@ import {
 import App from './App'
 import CodigoQR from './pages/QRcode'
 import reportWebVitals from './reportWebVitals'
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Layout from './components/general/layout'
 import Login from './components/authentication/login'
