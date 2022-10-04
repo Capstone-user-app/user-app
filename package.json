@@ -19,8 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "mocks": "mocks-server",
-    "lint": "eslint src",
-    "lint:fix": "eslint --fix src"
+    "lint": "eslint --ext .jsx --ext .js src",
+    "lint-fix": "eslint --fix --ext .jsx --ext .js src"
   },
   "eslintConfig": {
     "extends": [
