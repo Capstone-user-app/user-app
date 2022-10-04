@@ -78,9 +78,8 @@ const DetalleCompra = () => {
           
           >
             <Typography variant="h10" component="h1" gutterBottom>
-              bicicleta dedewdejded \n
-              cdcdcdcdcdcdcdcd
-            {purchases[0].products.map((product) => (
+              
+            {purchases[0]?.products.map((product) => (
               <Grid container direction="row" alignItems="center">
               <Grid item margin={1}>
                   <Avatar
@@ -167,7 +166,6 @@ const DetalleCompra = () => {
                               
                               <ListItemText secondary= {product.productName}/>
                             ))} */}
-                            <ListItemText secondary= "Producto 2"/>
                             <Grid container direction="row" className="flex justify-between ...">
                                 <Grid item sx={{textAlign:"left", alignItems:"left"}}>
                                     Fecha de venta
