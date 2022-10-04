@@ -31,9 +31,6 @@ const Navbar = ({OpenClose}) => {
                 <div className="hidden pr-6 md:block ">
                     {!isAuthenticated &&  <Login classN="p-4"/>}
                     {isAuthenticated &&  <Logout classN="p-4"/>}
-                    {/* <Link to='/' className='p-4'>Quiénes somos</Link>
-                    <Link to='/' className='p-4'>Servicios</Link>
-                    <Link to='/' className='p-4'>FAQ</Link> */}
                 </div>
             </div>
 
