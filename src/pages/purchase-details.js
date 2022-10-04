@@ -20,9 +20,13 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
 import ErrorIcon from '@mui/icons-material/Error';
 import AnnouncementIcon from '@mui/icons-material/Announcement';
+<<<<<<< HEAD
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
+=======
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+>>>>>>> style(style/purchasedetails): new styles
 
 
 
@@ -54,11 +58,11 @@ const DetalleCompra = () => {
   return (
     <>
     <Container
-    className="bg-blue-50"
+    className="flex-col sm:flex-row"
     >
 
       <Container 
-      className="flex shadow-2xl bg-white m-4 rounded"
+      className=" m-4"
       >
         <Typography variant="h6" component="h1" gutterBottom>
           Compras > Estado de mi compra
@@ -69,64 +73,53 @@ const DetalleCompra = () => {
 
         <Grid 
         container
-        className='w-full bg-red-50'
+        className='w-full'
         >
 
           <Container
-          className="flex shadow-2xl bg-white m-4 rounded"
+          className="flex shadow-md bg-white m-4 rounded"
           
           >
-            
             <Typography variant="h10" component="h1" gutterBottom>
+              bicicleta dedewdejded \n
+              cdcdcdcdcdcdcdcd
+            {/* {purchases[0].products.map((product) => (
+              <Grid container direction="row" alignItems="center">
+              <Grid item margin={1}>
+                  <Avatar
+                      alt="Remy Sharp"
+                      src={product.photoUrl[0]}
+                      sx={{ width: 25, height: 25 }}
+                  />
+              </Grid>
+              <Grid item>
+                  {product.productName}
+              </Grid>                    
+            </Grid>
+            ))} */}
 
-                <Grid container direction="row" alignItems="center">
-                    <Grid item margin={1}>
-                        <Avatar
-                            alt="Remy Sharp"
-                            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
-                            sx={{ width: 25, height: 25 }}
-                        />
-                    </Grid>
-                    <Grid item>
-                        Texto Producto
-                    </Grid>                    
-                </Grid>
-                
-                <Grid container direction="row" alignItems="center">
-                    <Grid item margin={1}>
-                        <Avatar
-                            alt="Remy Sharp"
-                            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
-                            sx={{ width: 25, height: 25 }}
-                        />
-                    </Grid>
-                    <Grid item>
-                        Texto Producto
-                    </Grid>  
-                </Grid>
-                
                 
             </Typography>
           </Container>
 
           <Container
-          className="flex shadow-2xl bg-white m-4 rounded"
+          className="flex shadow-md bg-white m-4 rounded"
           >
             
             <Typography variant="h6" component="h1" gutterBottom>
                 
-                {/* <InfoState states={purchases[0]?.packageHistory} stateActual={purchases[0]?.packageStatus}/>
-                {purchases[0]?.packageStatus} */}
+                {/* <InfoState states={purchases[0]?.packageHistory} stateActual={purchases[0]?.packageStatus}/> */}
+                {purchases[0]?.packageStatus}
             </Typography>
           </Container>
 
-          <Container className="flex shadow-2xl bg-white m-4 rounded">
+          <Container className="flex shadow-md bg-white m-4 rounded">
             <Typography variant="h6" component="h1" gutterBottom>
                 tercer container, link googlemaps estados paquete
             </Typography>
           </Container>
 
-          <Container className="flex shadow-2xl bg-white m-4 rounded">
+          <Container className="flex shadow-md bg-white m-4 rounded">
             <Typography variant="h6" component="h1" gutterBottom>
             <Box sx={{ width: '100%' }} padding={1}>
                 <Stepper activeStep={1} alternativeLabel>
@@ -141,23 +134,26 @@ const DetalleCompra = () => {
           </Container>
 
         
-          <Container className="flex shadow-2xl bg-white m-4 rounded">
+          <Container className="flex shadow-md bg-white m-4 rounded sm:bg-red-200">
             <Typography variant="h6" component="h1" gutterBottom>
                 <ListItemButton>
                     <ListItemIcon>
                         <AnnouncementIcon />
                     </ListItemIcon>
                 <ListItemText primary="Ayuda con la compra" />
+                <ArrowForwardIosIcon 
+                
+                />
                 </ListItemButton>
             </Typography>
           </Container>
 
           <Container
-          className="flex shadow-2xl bg-white m-4 rounded">
+          className="flex shadow-md bg-white m-4 rounded">
             
             <Typography variant="h6" component="h1" gutterBottom>
                 <List
-                    sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+                className='w-full'
                     component="nav">
                     <ListItemButton onClick={handleClick}>
                         <ListItemText primary="Detalle de la compra" />
@@ -166,11 +162,13 @@ const DetalleCompra = () => {
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
                             <ListItemText secondary= "Fecha de compra:"/>
-
-                            <ListItemText secondary= "Producto 1"/>
-                            <ListItemText secondary= "Producto 2"/>
+                            {/* {purchases[0].products.map((product) => (
+                              
+                              <ListItemText secondary= {product.productName}/>
+                            ))} */}
+                            {/* <ListItemText secondary= "Producto 2"/>
                             <ListItemText secondary= "Producto 3"/>
-                            <ListItemText secondary= "Producto 4"/>
+                            <ListItemText secondary= "Producto 4"/> */}
                         </List>
                         Total: $35.000
                     </Collapse>
