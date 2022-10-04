@@ -115,8 +115,8 @@ const DetalleCompra = () => {
             
             <Typography variant="h6" component="h1" gutterBottom>
                 
-                {/* <InfoState states={purchases[0]?.packageHistory} stateActual={purchases[0]?.packageStatus}/>
-                {purchases[0]?.packageStatus} */}
+                 <InfoState states={purchases[0]?.packageHistory} stateActual={purchases[0]?.packageStatus}/>
+                {/* {purchases[0]?.packageStatus}  */}
             </Typography>
           </Container>
 
