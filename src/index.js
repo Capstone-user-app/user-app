@@ -7,11 +7,10 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import App from './App'
 import CodigoQR from './pages/QRcode'
 import reportWebVitals from './reportWebVitals'
-import {BrowserRouter, Routes, Route} from "react-router-dom";
 
+import App from './App'
 import Layout from './components/general/layout'
 import Login from './components/authentication/login'
 import DetalleCompra from './pages/purchase-details'

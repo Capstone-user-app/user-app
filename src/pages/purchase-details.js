@@ -23,10 +23,7 @@ import AnnouncementIcon from '@mui/icons-material/Announcement';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-<<<<<<< HEAD
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-=======
->>>>>>> 7b6e5359639d862b26eb7d40233f0b467487f594
 
 
 
@@ -58,19 +55,11 @@ const DetalleCompra = () => {
   return (
     <>
     <Container
-<<<<<<< HEAD
     className="flex-col sm:flex-row"
     >
 
       <Container 
       className=" m-4"
-=======
-    className="bg-blue-50"
-    >
-
-      <Container 
-      className="flex shadow-2xl bg-white m-4 rounded"
->>>>>>> 7b6e5359639d862b26eb7d40233f0b467487f594
       >
         <Typography variant="h6" component="h1" gutterBottom>
           Compras > Estado de mi compra
