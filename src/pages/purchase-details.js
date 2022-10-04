@@ -26,6 +26,7 @@ import StepLabel from '@mui/material/StepLabel';
 
 
 
+
 const DetalleCompra = () => {
   const [purchases, setPurchase] = useState([])
   // petición a la api de compras para el usuario actual
@@ -140,7 +141,7 @@ const DetalleCompra = () => {
                 </Box>
             </Typography>
             <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
-                <Button variant="contained" disabled>Genera QR para el retiro del pedido</Button>
+                    <Button variant="contained" href = "/qr" disabled >Genera QR para el retiro del pedido</Button> 
             </Box>
           </Container>
 
@@ -171,7 +172,7 @@ const DetalleCompra = () => {
                         <List component="div" disablePadding>
                             <Grid container direction="row" className="flex justify-between ...">
                                 <Grid item sx={{textAlign:"left", alignItems:"left"}}>
-                                    Fecha de venta
+                                    Fecha de venta:
                                 </Grid>
                                 <Grid item sx={{textAlign:"right", alignItems:"right"}}>
                                     12 de Septiembre de 2022
