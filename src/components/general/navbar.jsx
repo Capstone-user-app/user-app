@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import logo from '../../assets/logo_pinflag_vertical.png'
 
 
 
@@ -11,11 +12,11 @@ function Navbar({OpenClose}) {
     return (
         <nav className="flex justify-between items-center h-16 bg-white text-black relative shadow-lg">
 
-            <Link to="/" className="pl-8">
-            <div className="w-12 h-12 flex flex-wrap justify-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzIyfzyeZpP2YI10gDUPyQtRYxAwtMfWrZ88Uqs8OJSYahOUBBHTU2DdzUhxCJ8fNKHz0&usqp=CAU"/>
-                </div>
-            </Link>
+            <div className="w-12 h-12 flex flex-wrap place-content-center ml-6">
+                <Link to="/" className="">
+                    <img src={logo} className="object-scale-down" alt="logo" />
+                </Link>
+            </div>
 
             <div className="px-4 cursor-pointer md:hidden" onClick={OpenClose}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
