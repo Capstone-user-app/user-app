@@ -110,20 +110,16 @@ const DetalleCompra = () => {
             </Typography>
           </Container>
 
-          <Container
-          className="flex shadow-2xl bg-white m-4 rounded"
-          >
-            
-            <Typography variant="h6" component="h1" gutterBottom>
-                
-                {/* <InfoState states={purchases[0]?.packageHistory} stateActual={purchases[0]?.packageStatus}/>
-                {purchases[0]?.packageStatus} */}
-            </Typography>
-          </Container>
-
           <Container className="flex shadow-2xl bg-white m-4 rounded">
             <Typography variant="h6" component="h1" gutterBottom>
-                tercer container, link googlemaps estados paquete
+                {purchases.map((purchase) => (
+                    purchase.packageStatus
+                )
+                )}
+                {purchases.map((purchase) => (
+                    purchase.Ecommerce
+                )
+                )}
             </Typography>
           </Container>
 
