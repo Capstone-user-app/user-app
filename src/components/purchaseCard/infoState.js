@@ -1,5 +1,5 @@
 import * as React from 'react'
-import DateDisplay from './dateDisplay'
+import DateDisplay from '../dateDisplay'
 /* eslint-disable eol-last */
 
 const InfoState = (props) => {
