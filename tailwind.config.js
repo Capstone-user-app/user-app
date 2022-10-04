@@ -10,17 +10,5 @@ module.exports = {
         brown: '#928779',
       }
     },
-<<<<<<< HEAD
     plugins: [],
   }
-=======
-    
-  },
-  
-  plugins: [],
-  
-}
-
-
-
->>>>>>> hello-world

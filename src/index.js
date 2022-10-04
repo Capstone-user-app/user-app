@@ -10,11 +10,10 @@ import {
 import App from './App'
 import CodigoQR from './pages/QRcode'
 import reportWebVitals from './reportWebVitals'
-import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Layout from './components/general/layout'
 import Login from './components/authentication/login'
-
+import DetalleCompra from './pages/purchase-details'
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line global-require
@@ -36,8 +35,8 @@ root.render(
         <Routes>
           <Route path='/' element={<App/>} />
           <Route path='/login' element={<Login/>} />
-          <Route path='/' element={<App/>} />
           <Route path='/QR' element={<CodigoQR/>} />
+          <Route path='/purchases-details' element={<DetalleCompra/>} />
           {/* <Route path='/register' element={<Register/>} /> */}
 
         </Routes>
