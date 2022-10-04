@@ -20,6 +20,9 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
 import ErrorIcon from '@mui/icons-material/Error';
 import AnnouncementIcon from '@mui/icons-material/Announcement';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
 
 
 
@@ -40,7 +43,13 @@ const DetalleCompra = () => {
     setOpen(!open);
   };
 
-  // rendererizar la lista de compras
+  const steps = [
+    '1',
+    '2',
+    '3',
+    "4",
+    "5"
+  ];
   
   return (
     <>
@@ -119,7 +128,15 @@ const DetalleCompra = () => {
 
           <Container className="flex shadow-2xl bg-white m-4 rounded">
             <Typography variant="h6" component="h1" gutterBottom>
-                Cuarto container, Mapa de estado
+            <Box sx={{ width: '100%' }} padding={1}>
+                <Stepper activeStep={1} alternativeLabel>
+                    {steps.map((label) => (
+                    <Step key={label}>
+                        <StepLabel>{label}</StepLabel>
+                    </Step>
+                    ))}
+                </Stepper>
+            </Box>
             </Typography>
           </Container>
 
