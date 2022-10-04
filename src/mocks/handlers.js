@@ -61,6 +61,22 @@ export const handlers = [
                     'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
                 }
                 ]
+            },
+            {
+              productName: 'Polera roja',
+              photoUrl: [
+              {
+                  'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+              }
+              ]
+            },
+            {
+              productName: 'Polera roja',
+              photoUrl: [
+              {
+                  'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+              }
+              ]
             }
         ],
         packageHistory: [
