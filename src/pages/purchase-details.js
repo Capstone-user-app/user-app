@@ -144,10 +144,10 @@ const DetalleCompra = () => {
 
           <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
-                <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
-                    <Stepper activeStep={status} alternativeLabel>
+                <Box  padding={1} textAlign='center'>
+                    <Stepper activeStep={status}  orientation='vertical'>
                         {steps.map((label) => (
-                        <Step key={label}>
+                        <Step key={label} >
                             <StepLabel >{label}</StepLabel>
                         </Step>
                         ))}
@@ -157,7 +157,7 @@ const DetalleCompra = () => {
             {status >= 5? (
                <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
 
-                <Button  variant="contained" onClick={handleClickOpenDialog}>Genera QR para el retiro del pedido</Button>
+                <Button variant="contained" onClick={handleClickOpenDialog}>Genera QR para el retiro del pedido</Button>
                 <Dialog
                 open={openDialog}
                 onClose={handleCloseDialog}
