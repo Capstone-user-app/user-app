@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import {Button, Box, Typography, Grid, Avatar, Divider, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from '@mui/material'
+import {Button, Box, Typography, Grid, Divider, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from '@mui/material'
 import { Container } from '@mui/system'
 import List from '@mui/material/List'
 import ListItemButton from '@mui/material/ListItemButton'
@@ -106,7 +106,7 @@ const DetalleCompra = () => {
             {purchases?.products?.map((product) => (
               <Grid container direction="row" alignItems="center">
               <Grid item margin={1}>
-                <img className="w-10 h-10 rounded" src={product?.photoUrl[0]['URLIMAGEN']} alt="Default avatar" />                  
+                <img className="h-10 w-10 rounded" src={product?.photoUrl[0].URLIMAGEN} alt="Default avatar" />
               </Grid>
               <Grid item>
                   {product.productName}
