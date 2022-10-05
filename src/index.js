@@ -7,19 +7,26 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import App from './App'
 import reportWebVitals from './reportWebVitals'
 
+import App from './App'
 import Layout from './components/general/layout'
 import CreateTicket from './pages/CreateTicket'
+import MyPurchases from './pages/myPurchases'
+import DetalleCompra from './pages/purchase-details'
+import TicketDetail from './pages/ticket-detail'
 import NotFoundPage from './pages/NotFound'
 
+// This only for deploying in netlify without conection to API
+const { worker } = require('./mocks/browser')
 
-if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line global-require
-  const { worker } = require('./mocks/browser')
-  worker.start()
-}
+worker.start()
+
+// if (process.env.NODE_ENV === 'development') {
+//   // eslint-disable-next-line global-require
+//   const { worker } = require('./mocks/browser')
+//   worker.start()
+// }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -35,10 +42,14 @@ root.render(
         <Routes>
           <Route path='/' element={<App/>} />
           <Route path='/create_ticket/:salesOrder' element={<CreateTicket/>} />
+          <Route path='/pedidos' element={<MyPurchases />} />
+          <Route path='/pedidos/:id' element={<DetalleCompra/>} />
+          <Route path='/ticket/:id' element={<TicketDetail/>} />
           <Route path="*" element={<NotFoundPage />} />
 
-          {/* <Route path='/register' element={<Register/>} /> */}
-
+          {/* // this route is used by netlify  */}
+          <Route path="/not_found" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
