@@ -32,12 +32,12 @@ const CreateTicket = () => {
                         'unuseful': 'Es lo que compré pero no me sirve',
                         'incomplete': 'El paquete llegó incompleto',
                         'defect': 'El paquete posee productos dañados',
-                        'different': 'Hay productos es diferentes a los que pedí'
+                        'different': 'Hay productos diferentes a los que pedí'
                                     },
                     'product exchange': {
                         'unuseful': 'Es lo que compré pero no me sirve',
                         'defect': 'El paquete posee productos dañados',
-                        'different': 'Hay productos es diferentes a los que pedí'
+                        'different': 'Hay productos diferentes a los que pedí'
                                     }
                     }
     const handleDescriptionChange = (event) => {
