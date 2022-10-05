@@ -16,12 +16,11 @@ import StepLabel from '@mui/material/StepLabel'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
 
-
 const DetalleCompra = () => {
   const [purchases, setPurchase] = useState()
   // petición a la api de compras para el usuario actual
   useEffect(() => {
-    fetch('api/purchases')
+    fetch('api/purchases/:id')
       .then((res) => res.json())
       .then((resJson) => {
         setPurchase(resJson)
@@ -46,9 +45,37 @@ const DetalleCompra = () => {
     'Comprado',
     'Procesado',
     'En camino',
-    'Listo para entrega',
+    'Recepcionado por punto',
     'Entregado al cliente'
   ]
+
+  let text = ''
+  let text2 = ''
+  let statuscolor = true
+
+  if (status === 1){
+    text = 'Comprado'
+    text2 =  `comprado el día ${ purchases?.packageHistory[0]?.date.substring(0,10)}, 
+    la dirección de entrega esta fijada a ${ purchases?.deliveryAddress}`
+  } else if (status === 2){
+    text = 'Procesado'
+    text2 =  `comprado el día ${ purchases?.packageHistory[1]?.date.substring(0,10)}`
+  }else if (status === 3){
+    text = 'En camino'
+    text2 =  `Pedido será entregado por 
+     ${ purchases?.shippingCost?.courier} con un tiempo de delivery de 
+     ${ purchases?.shippingCost?.delivery_time}, a la dirección ${ purchases?.deliveryAddress}`
+  }else if (status === 4){
+    text = 'Recepcionado por punto'
+    text2 =  `Despachado por ${ purchases?.shippingCost?.courier} y recepcionado el día ${ purchases?.packageHistory[3]?.date.substring(0,10)}
+    en la dirección ${ purchases?.deliveryAddress}. Esperando a ser retirado por
+    ${ purchases?.clientName}`
+  }else if (status === 7){
+    text = 'Entregado al cliente'
+    text2 =  `Retirado el día ${ purchases?.packageHistory[4]?.date.substring(0,10)} por ${ purchases?.clientName}. 
+    Pedido despachado por ${ purchases?.shippingCost?.courier}  `
+    statuscolor = false
+  }
 
   return (
 
@@ -87,20 +114,22 @@ const DetalleCompra = () => {
           className="m-4 flex rounded bg-white shadow-md"
           >
           <Grid container direction="row" className="flex justify-between ">
-              <Grid item sx={{textAlign:'left', alignItems:'left'}}>
-                Estado
-              </Grid>
-              <Grid item sx={{textAlign:'right', alignItems:'right'}} >
+            {statuscolor? (
+               <Grid item className="text-left">{text}</Grid>
+            ): <Grid item className="text-left text-lblue">{text}</Grid>}
+              <Grid item className='text-right'>
               Pedido N°{purchases?.saleOrder}
               </Grid>
           </Grid>
-          <p>
-            Hoala
+          <p className='my-4 text-lg'>
+            {text2}
           </p>
           </Container>
+
+
           <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
-                tercer container, link googlemaps estados paquete
+              ...
             </Typography>
           </Container>
           <Container className="m-4 flex rounded bg-white shadow-md">

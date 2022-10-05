@@ -34,13 +34,13 @@ export const handlers = [
       })
     )
   }),
-  rest.get('api/purchases', (req, res, ctx) => {
+  rest.get('api/purchases/:id', (req, res, ctx) => {
     // returns a mocked list of purchases
     const sales = {
       'packageId':'de933a81-3549-47f8-a21e-3d78f6aa8764',
       'pinflagId':'y676au',
       'saleOrder':'001234567',
-      'packageStatus':7,
+      'packageStatus':3,
       'state':'Valparaíso',
       'stateId':5,
       'city':'El Tabo',
