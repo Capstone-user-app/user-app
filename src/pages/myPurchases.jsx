@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { Button, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material'
-import InfoState from '../components/purchaseCard/infoState'
 import PurchaseCard from '../components/purchaseCard/purchaseCard'
 
 const MyPurchases = () => {
@@ -45,7 +44,7 @@ const MyPurchases = () => {
   return (
     <div className='bg-blue p-3'>
       <div className='rounded-2xl p-3'>
-        <div className='mb-8 text-center text-2xl md:text-3xl'>Mis Compras</div>
+        <div className='mb-8 text-center text-2xl text-white md:text-3xl'>Mis Compras</div>
         <div className='mb-4 flex flex-row justify-evenly'>
           <Button onClick={handleClickOpen} className='basis-1/4 bg-blue ' variant="contained">Fecha</Button>
           <Button className='basis-1/4 bg-blue ' variant="contained" >Ecommerce</Button>
@@ -63,33 +62,6 @@ const MyPurchases = () => {
         <div className='flex flex-col justify-center md:text-xl' >
           {purchases.map((purchase) => (
             <PurchaseCard saleOrder={purchase.saleOrder} ecommerce={purchase.Ecommerce} imageEcommerce={purchase.imageEcommerce} packageStatus={purchase.packageStatus} products={purchase.products} packageHistory={purchase.packageHistory} />
-          ))}
-
-          {purchases.map((purchase) => (
-            <div className="m-3 flex flex-row justify-around rounded-md bg-white text-[10px]">
-              <div className="my-16 ml-6  md:my-24">
-                <p>ACA VAN LAS IMAGENES</p>
-              </div>
-              <div className="m-6 flex flex-col md:p-8">
-                <div>
-                  <InfoState states={purchase.packageHistory} stateActual={purchase.packageStatus} />
-                </div>
-                <div>
-                  <b>Productos:</b>
-                  {purchase.products.map((p) => (
-                    <p>{p.productName}</p>
-                  ))}
-                </div>
-                <div>
-                  <b>Orden de compra:</b>
-                  <p>{purchase.saleOrder}</p>
-                  <b>Fecha de compra:</b>
-                </div>
-              </div>
-              <div className="my-16 ml-6  md:my-24">
-                <p>ACA VA LA FLECHA</p>
-              </div>
-            </div>
           ))}
         </div>
       </div>
