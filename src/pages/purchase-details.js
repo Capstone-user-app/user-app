@@ -45,8 +45,8 @@ const DetalleCompra = () => {
   const steps = [
     'Comprado',
     'Procesado',
-    'En Tránsito',
-    'Recepcionado por cliente',
+    'En camino',
+    'Listo para entrega',
     'Entregado al cliente'
   ]
 
@@ -150,7 +150,7 @@ const DetalleCompra = () => {
                                     Fecha compra
                                 </Grid>
                                 <Grid item sx={{textAlign:'right', alignItems:'right'}}>
-                                      {/* {purchases?.packageHistory[0]?.date.substring(0,10)} */}
+                                      {purchases?.packageHistory[0]?.date.substring(0,10)}
                                 </Grid>
                             </Grid>
                             <Divider variant="middle" />
