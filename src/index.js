@@ -44,7 +44,7 @@ root.render(
           <Route path='/pedidos/:id' element={<DetalleCompra/>} />
           <Route path='/ticket/:id' element={<TicketDetail/>} />
           <Route path="*" element={<NotFoundPage />} />
-          
+
           {/* // this route is used by netlify  */}
           <Route path="/not_found" element={<NotFoundPage />} />
           <Route path="*" element={<NotFoundPage />} />
