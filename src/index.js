@@ -36,7 +36,7 @@ root.render(
           <Route path='/' element={<App/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/QR' element={<CodigoQR/>} />
-          <Route path='/purchase-details' element={<DetalleCompra/>} />
+          <Route path='/purchase-details/:id' element={<DetalleCompra/>} />
           {/* <Route path='/register' element={<Register/>} /> */}
 
         </Routes>

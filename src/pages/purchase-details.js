@@ -14,7 +14,7 @@ import Stepper from '@mui/material/Stepper'
 import Step from '@mui/material/Step'
 import StepLabel from '@mui/material/StepLabel'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
-
+import { useNavigate } from 'react-router-dom';
 
 const DetalleCompra = () => {
   const [purchases, setPurchase] = useState()
@@ -32,6 +32,7 @@ const DetalleCompra = () => {
     setOpen(!open)
   }
 
+  const history = useNavigate()
   const status =  purchases?.packageStatus
 
   const steps = [
@@ -52,7 +53,7 @@ const DetalleCompra = () => {
     la dirección de entrega esta fijada a ${ purchases?.deliveryAddress}`
   } else if (status === 2){
     text = 'Procesado'
-    text2 =  `comprado el día ${ purchases?.packageHistory[1]?.date.substring(0,10)}`
+    text2 =  `Procesado el día ${ purchases?.packageHistory[1]?.date.substring(0,10)}`
   }else if (status === 3){
     text = 'En camino'
     text2 =  `Pedido será entregado por 
@@ -73,7 +74,7 @@ const DetalleCompra = () => {
   return (
 
     <Container
-    className="flex-col sm:flex-row"
+    className="flex"
     >
       <Container
       className=" m-4"
@@ -83,7 +84,7 @@ const DetalleCompra = () => {
         className='w-full'
         >
           <Container
-          className="m-4 flex rounded bg-white shadow-md"
+          className="m-4 flex rounded bg-white shadow-md sm:inset-y-0 sm:left-0"
           >
             <Typography variant="h10" component="h1" gutterBottom>
             {purchases?.products?.map((product) => (
@@ -110,7 +111,7 @@ const DetalleCompra = () => {
             {statuscolor? (
                <Grid item className="text-left">{text}</Grid>
             ): <Grid item className="text-left text-lblue">{text}</Grid>}
-              <Grid item className='text-right'>
+              <Grid item className="text-right">
               Pedido N°{purchases?.saleOrder}
               </Grid>
           </Grid>
@@ -139,13 +140,13 @@ const DetalleCompra = () => {
             </Typography>
             {status >= 5? (
                <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
-                <Button variant="contained" href="/QR">Genera QR para el retiro del pedido</Button>
+                <Button  variant="contained" href="/QR">Genera QR para el retiro del pedido</Button>
               </Box>
             ): null}
           </Container>
           <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
-                <ListItemButton>
+                <ListItemButton onClick={() => history(`/create_ticket/:${purchases?.saleOrder}`)}>
                     <ListItemIcon>
                         <AnnouncementIcon />
                     </ListItemIcon>
