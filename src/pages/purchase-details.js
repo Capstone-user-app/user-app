@@ -33,12 +33,25 @@ const DetalleCompra = () => {
     setOpen(!open)
   }
 
+
+  let statusStepper = purchases?.packageStatus-1
+
+  if (statusStepper === 6){
+    statusStepper = 5
+  }
+
+  const status =  purchases?.packageStatus
+
+
+
+
+
   const steps = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5'
+    'Comprado',
+    'Procesado',
+    'En Tránsito',
+    'Recepcionado por cliente',
+    'Entregado al cliente'
   ]
 
   return (
@@ -97,7 +110,7 @@ const DetalleCompra = () => {
           <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
                 <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
-                    <Stepper activeStep={1} alternativeLabel>
+                    <Stepper activeStep={statusStepper} alternativeLabel>
                         {steps.map((label) => (
                         <Step key={label}>
                             <StepLabel>{label}</StepLabel>
@@ -106,9 +119,11 @@ const DetalleCompra = () => {
                     </Stepper>
                 </Box>
             </Typography>
-            <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
+            {status === 7? (
+               <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
                 <Button variant="contained" disabled>Genera QR para el retiro del pedido</Button>
-            </Box>
+              </Box>
+            ): null}
           </Container>
           <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
