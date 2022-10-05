@@ -11,6 +11,7 @@ import reportWebVitals from './reportWebVitals'
 
 import App from './App'
 import Layout from './components/general/layout'
+import CreateTicket from './pages/CreateTicket'
 import MyPurchases from './pages/myPurchases'
 import DetalleCompra from './pages/purchase-details'
 import TicketDetail from './pages/ticket-detail'
@@ -40,6 +41,7 @@ root.render(
       <Layout>
         <Routes>
           <Route path='/' element={<App/>} />
+          <Route path='/crear_ticket/:salesOrder' element={<CreateTicket/>} />
           <Route path='/pedidos' element={<MyPurchases />} />
           <Route path='/pedidos/:id' element={<DetalleCompra/>} />
           <Route path='/ticket/:id' element={<TicketDetail/>} />
