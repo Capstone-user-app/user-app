@@ -7,7 +7,6 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import CodigoQR from './pages/QRcode'
 import reportWebVitals from './reportWebVitals'
 
 import App from './App'
@@ -35,7 +34,6 @@ root.render(
         <Routes>
           <Route path='/' element={<App/>} />
           <Route path='/login' element={<Login/>} />
-          <Route path='/QR' element={<CodigoQR/>} />
           <Route path='/purchase-details/:id' element={<DetalleCompra/>} />
           {/* <Route path='/register' element={<Register/>} /> */}
 

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import {Button, Box, Typography, Grid, Avatar, Divider} from '@mui/material'
+import {Button, Box, Typography, Grid, Avatar, Divider, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle} from '@mui/material'
 import { Container } from '@mui/system'
 import List from '@mui/material/List'
 import ListItemButton from '@mui/material/ListItemButton'
@@ -15,6 +15,7 @@ import Step from '@mui/material/Step'
 import StepLabel from '@mui/material/StepLabel'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { useNavigate } from 'react-router-dom'
+import { QRCodeCanvas } from 'qrcode.react'
 
 const DetalleCompra = () => {
   const [purchases, setPurchase] = useState()
@@ -27,9 +28,19 @@ const DetalleCompra = () => {
       })
   }, [])
 
-  const [open, setOpen] = React.useState(true)
+  const [open, setOpen] = useState(true)
   const handleClick = () => {
     setOpen(!open)
+  }
+
+  const [openDialog, setOpenDialog] = useState(false)
+
+  const handleClickOpenDialog = () => {
+    setOpenDialog(true)
+  }
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false)
   }
 
   const history = useNavigate()
@@ -150,7 +161,31 @@ const DetalleCompra = () => {
             </Typography>
             {status >= 5? (
                <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
-                <Button  variant="contained" href="/QR">Genera QR para el retiro del pedido</Button>
+
+                <Button  variant="contained" onClick={handleClickOpenDialog}>Genera QR para el retiro del pedido</Button>
+                <Dialog
+                open={openDialog}
+                onClose={handleCloseDialog}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+              >
+                <DialogTitle id="alert-dialog-title">
+                  Muestra tu código QR para retirar tu pedido
+                </DialogTitle>
+                <DialogContent>
+                  <DialogContentText>
+                  <Box className = 'm-5 flex justify-center '>
+                        <Box className = 'm-3 flex justify-center'>
+                            <QRCodeCanvas value={purchases?.pinflagId} />
+                        </Box>
+                </Box>
+                  </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Button
+                  onClick={handleCloseDialog}>Volver</Button>
+                </DialogActions>
+              </Dialog>
               </Box>
             ): null}
           </Container>
