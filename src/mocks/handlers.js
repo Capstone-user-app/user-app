@@ -67,7 +67,7 @@ export const handlers = [
               'weight':12,
               'photoUrl':[
                   {
-                      'URLIMAGEN':'https://via.placeholder.com/200x120.png'
+                      'URLIMAGEN':'https://falabella.scene7.com/is/image/Falabella/gsc_112914611_458594_1?wid=800&hei=800&qlt=70'
                   }
               ]
           },
@@ -78,7 +78,7 @@ export const handlers = [
               'weight':12,
               'photoUrl':[
                   {
-                      'URLIMAGEN':'https://via.placeholder.com/200x120.png'
+                      'URLIMAGEN':'https://falabella.scene7.com/is/image/Falabella/gsc_113000798_489801_1?wid=1500&hei=1500&qlt=70'
                   },
                   {
                       'URLIMAGEN':'https://via.placeholder.com/200x120.png'
