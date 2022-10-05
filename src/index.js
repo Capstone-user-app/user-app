@@ -11,7 +11,6 @@ import reportWebVitals from './reportWebVitals'
 
 import App from './App'
 import Layout from './components/general/layout'
-import Login from './components/authentication/login'
 import DetalleCompra from './pages/purchase-details'
 import NotFoundPage from './pages/NotFound'
 
