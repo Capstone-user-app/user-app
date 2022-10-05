@@ -14,6 +14,7 @@ import App from './App'
 import Layout from './components/general/layout'
 import Login from './components/authentication/login'
 import DetalleCompra from './pages/purchase-details'
+import TicketDetail from './pages/ticket-detail'
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line global-require
@@ -37,6 +38,7 @@ root.render(
           <Route path='/login' element={<Login/>} />
           <Route path='/QR' element={<CodigoQR/>} />
           <Route path='/purchases-details' element={<DetalleCompra/>} />
+          <Route path='/ticket-details' element={<TicketDetail/>} />
           {/* <Route path='/register' element={<Register/>} /> */}
 
         </Routes>

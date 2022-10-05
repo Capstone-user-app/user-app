@@ -142,5 +142,39 @@ export const handlers = [
       ctx.status(200),
       ctx.json(sales)
     )
+  }),
+  rest.get('api/ticket', (req, res, ctx) => {
+    const ticket = [
+      {
+        saleOrder: '00123456700',
+        ticketId: '123456789',
+        Ecommerce: 'Lippi',
+        imageEcommerce: null,
+        ticketStatus: 6,
+        ticketTipe: 4,
+        fecha1:  '2022-03-11',
+        fecha2:  '2022-03-11',
+        fecha3:  '2022-03-11',
+        fecha4:  '2022-03-11',
+        fecha5:  '2022-03-11'
+      },
+      {
+        saleOrder: '001987654',
+        ticketId: '198765432',
+        Ecommerce: 'WD-40',
+        imageEcommerce: null,
+        ticketStatus: 5,
+        ticketTipe: 3,
+        fecha1:  '2022-03-11',
+        fecha2:  '2022-03-11',
+        fecha3:  '2022-03-11',
+        fecha4:  '2022-03-11',
+        fecha5:  '2022-03-11'
+      }]
+      return res(
+        ctx.status(200),
+        ctx.json(ticket)
+    )
   })
 ]
+
