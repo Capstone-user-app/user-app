@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './navbar'
 import MiniNavbar from './mini-navbar'
+import Footer from './footer'
+
 
 const Layout = ({children}) => {
 
@@ -28,6 +30,7 @@ const Layout = ({children}) => {
             <Navbar OpenClose={toggleOpen}/>
             {isOpen && <MiniNavbar OpenClose={toggleOpen}/>}
             {children}
+            <Footer />
         </div>
     )
 
