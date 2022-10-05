@@ -11,7 +11,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 import Layout from './components/general/layout'
-import Login from './components/authentication/login'
+import NotFoundPage from './pages/NotFound'
 
 
 if (process.env.NODE_ENV === 'development') {
@@ -33,7 +33,7 @@ root.render(
       <Layout>
         <Routes>
           <Route path='/' element={<App/>} />
-          <Route path='/login' element={<Login/>} />
+          <Route path="*" element={<NotFoundPage />} />
           {/* <Route path='/register' element={<Register/>} /> */}
 
         </Routes>
