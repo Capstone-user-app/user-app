@@ -6,7 +6,12 @@ import InfoState from './infoState'
 import InfoOrder from './infoOrder'
 import InfoProducts from './infoProducts'
 
-
+/* Muestra la información de cada compra en forma de una tarjeta (card).
+Recibe como props los múltiples datos de la compra.
+Cada dato es mostrado en un componente diferente, y estos son:
+- InfoState: muestra el estado actual de la compra.
+- InfoOrder: muestra el número de orden y la fecha de compra.
+- InfoProducts: muestra los productos comprados. */
 
 const PurchaseCard = (props) => {
   const { saleOrder, imageEcommerce, packageStatus, products, packageHistory } = props

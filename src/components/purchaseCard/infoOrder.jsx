@@ -1,11 +1,10 @@
 import React from 'react'
 import DateDisplay from '../dateDisplay'
 
+/* InfoOrder: muestra el número de orden y la fecha de compra. */
+
 const InfoOrder = (props) => {
     const { saleOrder, packageHistory } = props
-    // const parsedDate = new Date(date)
-    // const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
-    // const formattedDate = parsedDate.toLocaleDateString('es-ES', options)
 
     return (
         <div>

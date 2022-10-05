@@ -3,6 +3,10 @@ import { useEffect, useState } from 'react'
 import { Button, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material'
 import PurchaseCard from '../components/purchaseCard/purchaseCard'
 
+/* Muestra la lista de compras del usuario.
+Hace un fetch a la API de compras en cuanto se carga la ruta.
+También hace solicitudes hace cuando se filtra por fecha. */
+
 const MyPurchases = () => {
   const [purchases, setPurchase] = useState([])
   const [open, setOpen] = React.useState(false)

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import DateDisplay from '../dateDisplay'
-/* eslint-disable eol-last */
+
+/* InfoState: muestra el estado actual de la compra. */
 
 const InfoState = (props) => {
   const { states, stateActual } = props
@@ -40,8 +41,8 @@ const InfoState = (props) => {
         <p className='pb-1 text-[#173554]'> <DateDisplay date={stateDate} /> </p>
       </div>
     ) : <div>
-          <p className='pb-1 font-bold text-[#182ACB]'>{text}</p>
-        </div>
+      <p className='pb-1 font-bold text-[#182ACB]'>{text}</p>
+    </div>
   )
 }
 
