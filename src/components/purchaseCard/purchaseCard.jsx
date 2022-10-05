@@ -1,21 +1,17 @@
 import * as React from 'react'
 import IconButton from '@mui/material/IconButton'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import { useNavigate } from 'react-router-dom'
 import InfoState from './infoState'
 import InfoOrder from './infoOrder'
 import InfoProducts from './infoProducts'
 
 
 
-const purchaseCard = (props) => {
-  const { saleOrder, ecommerce, imageEcommerce, packageStatus, products, packageHistory } = props
+const PurchaseCard = (props) => {
+  const { saleOrder, imageEcommerce, packageStatus, products, packageHistory } = props
 
-  console.log(saleOrder)
-  console.log(ecommerce)
-  console.log(imageEcommerce)
-  console.log(packageStatus)
-  console.log(products)
-  console.log(packageHistory)
+  const history = useNavigate()
 
   return (
     <div className="mb-3 grid grid-cols-12 grid-rows-6 rounded-md bg-white py-3 pr-2 shadow-lg md:py-8">
@@ -44,7 +40,7 @@ const purchaseCard = (props) => {
         <img src={imageEcommerce} alt="logo" className='h-10 w-16 object-contain' />
       </div>
       <div className="col-start-11 col-end-13 row-start-3 row-end-5 place-self-center md:col-start-12 md:col-end-13 md:row-start-1 md:row-end-7">
-        <IconButton aria-label="detalle" size="large">
+        <IconButton onClick={() => history(`/purchase-details/${saleOrder}`)} aria-label="detalle" size="large">
           <ArrowForwardIosIcon />
         </IconButton>
       </div>
@@ -52,4 +48,4 @@ const purchaseCard = (props) => {
   )
 }
 
-export default purchaseCard
+export default PurchaseCard
