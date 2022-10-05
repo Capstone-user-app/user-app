@@ -12,6 +12,7 @@ import reportWebVitals from './reportWebVitals'
 
 import Layout from './components/general/layout'
 import Login from './components/authentication/login'
+import CreateTicket from './pages/CreateTicket'
 
 
 if (process.env.NODE_ENV === 'development') {
@@ -34,6 +35,7 @@ root.render(
         <Routes>
           <Route path='/' element={<App/>} />
           <Route path='/login' element={<Login/>} />
+          <Route path='/create_ticket/:salesOrder' element={<CreateTicket/>} />
           {/* <Route path='/register' element={<Register/>} /> */}
 
         </Routes>
