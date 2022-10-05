@@ -10,6 +10,7 @@ import TextField from '@mui/material/TextField'
 import TaskAltIcon from '@mui/icons-material/TaskAlt'
 import { useParams, useNavigate } from 'react-router-dom'
 import SkuTextFields from '../components/general/skuTextFields'
+import CreateTicketLayout from '../components/createTicket/createTicketLayout'
 
 const CreateTicket = () => {
     const { salesOrder } = useParams()
@@ -44,10 +45,6 @@ const CreateTicket = () => {
         }
 
     const submitTicket = () => {
-        console.log('reason: ', reason)
-        console.log('detail: ', detail)
-        console.log('description: ', description)
-        console.log('skuArray: ', skuArray)
         setStep1(false)
         setStep2(false)
         setStep3(false)
@@ -58,11 +55,7 @@ const CreateTicket = () => {
     const secondStepInfo = (e, reasonParam, detailsParam) => {
         if (reason === 'money return' || reason === 'product exchange') {
             return (
-
-                <div className='grid grid-flow-row auto-rows-max items-center justify-items-center'>
-                    <div className='mt-5'>
-                        <h1 className='mb-5 text-xl'>¿Qué pasó con tu compra?</h1>
-                    </div>
+                <CreateTicketLayout title='¿Qué pasó con tu compra?'>
 
                 {Object.keys(details[reason]).map((key) => (
                     <div className='mt-5 grid w-9/12 grid-cols-10'>
@@ -75,32 +68,26 @@ const CreateTicket = () => {
                         </div>
                     </div>
             ))}
-            </div>
+            </CreateTicketLayout>
             )
 
         }
         if (reason === 'delivery direction') {
             return (
-                <div className='grid grid-flow-row auto-rows-max items-center justify-items-center'>
-                    <div className='mt-5 w-9/12 text-center'>
-                        <h1 className='mb-5 text-xl'>Selecciona la nueva ubicación de despacho</h1>
-                    </div>
+                <CreateTicketLayout title='Selecciona la nueva ubicación de despacho'>
                         <div>
                             <img src='https://sbt.blob.core.windows.net/storyboards/es-examples/poster-mapa-del-mundo.png?utc=132755310829600000' alt='Mapa' style={{width:'100%'}}/>
                         </div>
                     <div>
                         <button type='button' className='mt-5 rounded-md bg-blue p-2 text-white' onClick={() => {setStep2(false); setStep4(true)}}>Confirmar ubicación</button>
                     </div>
-                    </div>
+                </CreateTicketLayout>
 
             )
         }
         if (reason === 'doubt') {
             return (
-                <div className='grid grid-flow-row auto-rows-max items-center justify-items-center'>
-                    <div className='mt-5 w-9/12 text-center'>
-                        <h1 className='mb-5 text-xl'>Cuéntanos tu duda</h1>
-                    </div>
+                <CreateTicketLayout title='Cuéntanos tu duda'>
 
                     <div className='mt-5 w-9/12'>
                         <TextField id='outlined-multiline-static' label='Escribe tu duda' variant='outlined' multiline rows={4} style={{width:'100%'}} onChange={handleDescriptionChange}/>
@@ -109,7 +96,7 @@ const CreateTicket = () => {
                     <div>
                         <button type='button' className='mt-5 rounded-md bg-blue p-2 text-white' onClick={() => submitTicket()}>Generar ticket</button>
                     </div>
-                    </div>
+                </CreateTicketLayout>
             )
 
 
@@ -120,10 +107,7 @@ const CreateTicket = () => {
     const thirdStepInfo = (reasonParam, detailsParam, skuArrayParam, setSkuArrayParam) => {
         if (reason === 'money return' || reason === 'product exchange') {
             return (
-            <div className='grid grid-flow-row auto-rows-max items-center justify-items-center'>
-                <div className='mt-5 w-9/12 text-center'>
-                    <h1 className='mb-5 text-xl'>Ingresa un SKU para cada producto a devolver</h1>
-                </div>
+            <CreateTicketLayout title='Ingresa un SKU para cada producto a devolver'>
 
                 <div>
                     <SkuTextFields
@@ -134,18 +118,14 @@ const CreateTicket = () => {
                 <div>
                     <button type='button' className='mt-5 rounded-md bg-blue p-2 text-white' onClick={() => {setStep3(false); setStep4(true)}}>Siguiente</button>
                 </div>
-            </div>
+            </CreateTicketLayout>
             )
         }
         return null
     }
 
     const fourthStepInfo = () => (
-            <div className='grid grid-flow-row auto-rows-max items-center justify-items-center'>
-                <div className='mt-5 w-9/12 text-center'>
-                    <h1 className='mb-5 text-xl'>¿Algún otro comentario?</h1>
-                </div>
-
+                <CreateTicketLayout title='¿Algún otro comentario?'>
                 <div className='mt-5 w-9/12'>
                     <TextField id='outlined-multiline-static' label='Comentarios extra' variant='outlined' multiline rows={6} style={{width:'100%'}} onChange={handleDescriptionChange}/>
                 </div>
@@ -153,7 +133,7 @@ const CreateTicket = () => {
                 <div>
                     <button type='button' className='mt-6 rounded-md bg-blue p-2 text-white' onClick={() => submitTicket()}>Generar ticket</button>
                 </div>
-                </div>
+                </CreateTicketLayout>
         )
 
     const handleBack = () => {
@@ -190,10 +170,7 @@ const CreateTicket = () => {
         </div>
         )}
         {step1 && (
-            <div className='grid grid-flow-row auto-rows-max items-center justify-items-center'>
-            <div className='mt-5'>
-                <h1 className='mb-5 text-xl'>¿Qué necesitas para esta compra?</h1>
-            </div>
+            <CreateTicketLayout title='¿Qué necesitas para esta compra?'>
                 {Object.keys(reasons).map((key) => (
                     <div className='mt-5 grid w-9/12 grid-cols-10'>
                         <p className='col-span-9'>{reasons[key]}</p>
@@ -206,7 +183,7 @@ const CreateTicket = () => {
                     </div>
                     )
                 )}
-            </div>
+            </CreateTicketLayout>
         )}
         {step2 && (
             secondStepInfo(reason, details)
@@ -218,17 +195,14 @@ const CreateTicket = () => {
             fourthStepInfo()
         )}
         {submitted && (
-            <div className='grid grid-flow-row auto-rows-max items-center justify-items-center'>
-            <div className='mt-5 w-9/12 text-center'>
-                <h1 className='mb-5 text-xl'>¡Tu ticket ha sido generado!</h1>
-            </div>
+            <CreateTicketLayout title='¡Tu ticket ha sido generado!'>
                 <div>
                     <TaskAltIcon style={{fontSize: 100, color: '4BB543'}}  />
                 </div>
             <div>
                 <button type='button' className='mt-5 rounded-md bg-blue p-2 text-white' onClick={() => {navigate(-1)}}>Entendido</button>
             </div>
-            </div>
+            </CreateTicketLayout>
 
         )}
     </div>

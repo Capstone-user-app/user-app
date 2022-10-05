@@ -11,7 +11,6 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 import Layout from './components/general/layout'
-import Login from './components/authentication/login'
 import CreateTicket from './pages/CreateTicket'
 import NotFoundPage from './pages/NotFound'
 
@@ -35,7 +34,6 @@ root.render(
       <Layout>
         <Routes>
           <Route path='/' element={<App/>} />
-          <Route path='/login' element={<Login/>} />
           <Route path='/create_ticket/:salesOrder' element={<CreateTicket/>} />
           <Route path="*" element={<NotFoundPage />} />
 
