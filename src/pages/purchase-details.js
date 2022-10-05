@@ -5,6 +5,8 @@ import { Container } from '@mui/system'
 import List from '@mui/material/List'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import ListItemText from '@mui/material/ListItemText'
 import Collapse from '@mui/material/Collapse'
 import ExpandLess from '@mui/icons-material/ExpandLess'
@@ -13,7 +15,6 @@ import AnnouncementIcon from '@mui/icons-material/Announcement'
 import Stepper from '@mui/material/Stepper'
 import Step from '@mui/material/Step'
 import StepLabel from '@mui/material/StepLabel'
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { useNavigate } from 'react-router-dom'
 import { QRCodeCanvas } from 'qrcode.react'
 
@@ -125,7 +126,7 @@ const DetalleCompra = () => {
           <Grid container direction="row" className="flex justify-between text-lg font-bold">
             {statuscolor? (
                <Grid item className="text-left">{textStatus}</Grid>
-            ): <Grid item className="text-left text-lblue">{textStatus}</Grid>}
+            ): <Grid item className="text-left text-green">{textStatus}</Grid>}
               <Grid item className="text-right">
               Pedido N°{purchases?.saleOrder}
               </Grid>
@@ -141,19 +142,13 @@ const DetalleCompra = () => {
           </p>
           </Container>
 
-
-          <Container className="m-4 flex rounded bg-white shadow-md">
-            <Typography variant="h6" component="h1" gutterBottom>
-              ...
-            </Typography>
-          </Container>
           <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
                 <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
                     <Stepper activeStep={status} alternativeLabel>
                         {steps.map((label) => (
                         <Step key={label}>
-                            <StepLabel>{label}</StepLabel>
+                            <StepLabel >{label}</StepLabel>
                         </Step>
                         ))}
                     </Stepper>
@@ -196,7 +191,7 @@ const DetalleCompra = () => {
                         <AnnouncementIcon />
                     </ListItemIcon>
                 <ListItemText primary="Ayuda con la compra" />
-                <ArrowForwardIosIcon
+                <KeyboardArrowRightIcon
                 />
                 </ListItemButton>
             </Typography>
@@ -208,6 +203,9 @@ const DetalleCompra = () => {
                 className='w-full'
                     component="nav">
                     <ListItemButton onClick={handleClick}>
+                      <ListItemIcon>
+                        <ShoppingCartIcon />
+                      </ListItemIcon>
                         <ListItemText primary="Detalle de la compra" />
                         {open ? <ExpandLess /> : <ExpandMore />}
                     </ListItemButton>
