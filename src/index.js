@@ -7,14 +7,14 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import CodigoQR from './pages/QRcode'
 import reportWebVitals from './reportWebVitals'
 
 import App from './App'
 import Layout from './components/general/layout'
-import Login from './components/authentication/login'
 import DetalleCompra from './pages/purchase-details'
 import TicketDetail from './pages/ticket-detail'
+import NotFoundPage from './pages/NotFound'
+
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line global-require
@@ -35,12 +35,11 @@ root.render(
       <Layout>
         <Routes>
           <Route path='/' element={<App/>} />
-          <Route path='/login' element={<Login/>} />
-          <Route path='/QR' element={<CodigoQR/>} />
-          <Route path='/purchases-details' element={<DetalleCompra/>} />
-          <Route path='/ticket-details' element={<TicketDetail/>} />
-          {/* <Route path='/register' element={<Register/>} /> */}
-
+          <Route path='/pedidos/:id' element={<DetalleCompra/>} />
+          <Route path='/detalle_ticket/:id' element={<TicketDetail/>} />
+          <Route path="*" element={<NotFoundPage />} />
+          {/* // this route is used by netlify  */}
+          <Route path="/not_found" element={<NotFoundPage />}/>
         </Routes>
       </Layout>
     </BrowserRouter>
