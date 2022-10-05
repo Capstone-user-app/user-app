@@ -18,7 +18,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
 
 const DetalleCompra = () => {
-  const [purchases, setPurchase] = useState([])
+  const [purchases, setPurchase] = useState()
   // petición a la api de compras para el usuario actual
   useEffect(() => {
     fetch('api/purchases')
@@ -29,7 +29,6 @@ const DetalleCompra = () => {
   }, [])
 
   const [open, setOpen] = React.useState(true)
-
   const handleClick = () => {
     setOpen(!open)
   }
@@ -47,28 +46,23 @@ const DetalleCompra = () => {
     <Container
     className="flex-col sm:flex-row"
     >
-
       <Container
       className=" m-4"
        />
-
         <Grid
         container
         className='w-full'
         >
-
           <Container
           className="m-4 flex rounded bg-white shadow-md"
-
           >
             <Typography variant="h10" component="h1" gutterBottom>
-
-            {purchases[0]?.products.map((product) => (
+            {purchases?.products?.map((product) => (
               <Grid container direction="row" alignItems="center">
               <Grid item margin={1}>
                   <Avatar
                       alt="Remy Sharp"
-                      src={product.photoUrl[0]}
+                      src={product?.photoUrl[0]}
                       sx={{ width: 25, height: 25 }}
                   />
               </Grid>
@@ -77,28 +71,29 @@ const DetalleCompra = () => {
               </Grid>
             </Grid>
             ))}
-
-
             </Typography>
           </Container>
 
           <Container
           className="m-4 flex rounded bg-white shadow-md"
           >
-
-            <Typography variant="h6" component="h1" gutterBottom>
-
-                {/* <InfoState states={purchases[0]?.packageHistory} stateActual={purchases[0]?.packageStatus}/> */}
-                {purchases[0]?.packageStatus}
-            </Typography>
+          <Grid container direction="row" className="flex justify-between ">
+              <Grid item sx={{textAlign:'left', alignItems:'left'}}>
+                Estado
+              </Grid>
+              <Grid item sx={{textAlign:'right', alignItems:'right'}} >
+              Pedido N°{purchases?.saleOrder}
+              </Grid>
+          </Grid>
+          <p>
+            Hoala
+          </p>
           </Container>
-
           <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
                 tercer container, link googlemaps estados paquete
             </Typography>
           </Container>
-
           <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
                 <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
@@ -109,15 +104,12 @@ const DetalleCompra = () => {
                         </Step>
                         ))}
                     </Stepper>
-
                 </Box>
             </Typography>
             <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
                 <Button variant="contained" disabled>Genera QR para el retiro del pedido</Button>
             </Box>
           </Container>
-
-
           <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
                 <ListItemButton>
@@ -126,15 +118,12 @@ const DetalleCompra = () => {
                     </ListItemIcon>
                 <ListItemText primary="Ayuda con la compra" />
                 <ArrowForwardIosIcon
-
                 />
                 </ListItemButton>
             </Typography>
           </Container>
-
           <Container
           className="m-4 flex rounded bg-white shadow-md">
-
             <Typography variant="h10" component="h1" gutterBottom>
                 <List
                 className='w-full'
@@ -145,54 +134,32 @@ const DetalleCompra = () => {
                     </ListItemButton>
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <ListItemText secondary= "Fecha de compra:"/>
-                            {/* {purchases[0].products.map((product) => (
-
-                              <ListItemText secondary= {product.productName}/>
-                            ))} */}
                             <Grid container direction="row" className="flex justify-between">
                                 <Grid item sx={{textAlign:'left', alignItems:'left'}}>
-                                    Fecha de venta
+                                    Fecha compra
                                 </Grid>
                                 <Grid item sx={{textAlign:'right', alignItems:'right'}}>
-                                    12 de Septiembre de 2022
+                                      {/* {purchases?.packageHistory[0]?.date.substring(0,10)} */}
                                 </Grid>
                             </Grid>
                             <Divider variant="middle" />
-
+                            {purchases?.products?.map((product)=> (
                                 <Grid container direction="row" className="flex justify-between">
-                                    <Grid item sx={{textAlign:'left', alignItems:'left'}}>
-                                        Producto 1
-                                    </Grid>
-                                    <Grid item sx={{textAlign:'right', alignItems:'right'}}>
-                                        $12.000
-                                    </Grid>
+                                <Grid item sx={{textAlign:'left', alignItems:'left'}}>
+                                    {product.productName}
                                 </Grid>
-
-                                <Grid container direction="row" className="flex justify-between">
-                                    <Grid item sx={{textAlign:'left', alignItems:'left'}}>
-                                        Producto 2
-                                    </Grid>
-                                    <Grid item sx={{textAlign:'right', alignItems:'right'}}>
-                                        $10.000
-                                    </Grid>
+                                <Grid item sx={{textAlign:'right', alignItems:'right'}}>
+                                    {product.price}
                                 </Grid>
-
-                                <Grid container direction="row" className="flex justify-between">
-                                    <Grid item sx={{textAlign:'left', alignItems:'left'}}>
-                                        Producto 3
-                                    </Grid>
-                                    <Grid item sx={{textAlign:'right', alignItems:'right'}}>
-                                        $14.000
-                                    </Grid>
                                 </Grid>
+                                    ))}
                             <Divider variant="middle" />
                                 <Grid container direction="row" className="flex justify-between">
                                     <Grid item sx={{textAlign:'left', alignItems:'left'}}>
-                                        Envío:
+                                        Envío
                                     </Grid>
                                     <Grid item sx={{textAlign:'right', alignItems:'right'}}>
-                                        $2.000
+                                        {purchases?.shippingCost?.price}
                                     </Grid>
                                 </Grid>
                         </List>
@@ -202,14 +169,13 @@ const DetalleCompra = () => {
                                 Total
                             </Grid>
                             <Grid item sx={{textAlign:'right', alignItems:'right'}} >
-                                $38.000
+                            {purchases?.cost}
                             </Grid>
                         </Grid>
                     </Collapse>
                 </List>
             </Typography>
           </Container>
-
       </Grid>
     </Container>
 
