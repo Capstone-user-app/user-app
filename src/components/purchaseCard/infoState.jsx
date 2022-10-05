@@ -36,12 +36,12 @@ const InfoState = (props) => {
   return (
     !azul ? (
       <div>
-        <div className='font-bold text-[#008000]'>{text}</div>
-        <div className='text-[#173554]'>
-          <DateDisplay date={stateDate} />
-        </div>
+        <p className='font-bold text-[#008000]'>{text}</p>
+        <p className='pb-1 text-[#173554]'> <DateDisplay date={stateDate} /> </p>
       </div>
-    ) : <div className='text-[#182ACB]'>{text}</div>
+    ) : <div>
+          <p className='pb-1 font-bold text-[#182ACB]'>{text}</p>
+        </div>
   )
 }
 

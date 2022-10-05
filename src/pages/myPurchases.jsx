@@ -43,7 +43,7 @@ const MyPurchases = () => {
   }, [])
   // rendererizar la lista de compras
   return (
-    <div className='bg-white p-3'>
+    <div className='bg-blue p-3'>
       <div className='rounded-2xl p-3'>
         <div className='mb-8 text-center text-2xl md:text-3xl'>Mis Compras</div>
         <div className='mb-4 flex flex-row justify-evenly'>

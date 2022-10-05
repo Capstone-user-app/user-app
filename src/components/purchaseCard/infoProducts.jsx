@@ -30,7 +30,7 @@ const InfoProducts = (props) => {
   }
   return (
     <div>
-        <p>{textProducts}</p>
+        <p className='pb-1'>{textProducts}</p>
     </div>
   )
 }

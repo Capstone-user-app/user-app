@@ -41,7 +41,7 @@ export const handlers = [
         saleOrder: '001234567',
         Ecommerce: 'Lippi',
         imageEcommerce: 'https://www.lippioutdoor.com/static/version1664570782/frontend/Linets/Lippi/es_AR/images/logo.png',
-        packageStatus: 7,
+        packageStatus: 4,
         products: [
           {
             productName: 'Polera roja',

@@ -18,21 +18,26 @@ const purchaseCard = (props) => {
   console.log(packageHistory)
 
   return (
-    <div className="mb-2 grid grid-cols-12 grid-rows-6 rounded-sm bg-white px-4 py-6 shadow-lg">
-      <div className="col-start-1 col-end-4 row-start-1 row-end-7 m-0 place-self-center pt-2">
-        <div className="m-0 mb-5 flex flex-col -space-y-2 -space-x-0 md:flex-row md:-space-x-2 md:-space-y-0">
-          <img className="h-16 w-16 rounded-full border-2 border-white dark:border-gray-800 md:h-20 md:w-20" src="/docs/images/people/profile-picture-5.jpg" alt="" />
-          <img className="h-16 w-16 rounded-full border-2 border-white dark:border-gray-800  md:h-20 md:w-20" src="/docs/images/people/profile-picture-2.jpg" alt="" />
-          <img className="h-16 w-16 rounded-full border-2 border-white dark:border-gray-800  md:h-20 md:w-20" src="/docs/images/people/profile-picture-3.jpg" alt="" />
+    <div className="mb-3 grid grid-cols-12 grid-rows-6 rounded-md bg-white py-3 pr-2 shadow-lg md:py-8">
+      <div className="col-start-1 col-end-4 row-start-1 row-end-7 place-self-center">
+        <div className="flex flex-col -space-y-2 -space-x-0 lg:flex-row lg:-space-x-2 lg:-space-y-0">
+          <img className="h-14 w-14 rounded-full border-2 border-blue md:h-20 md:w-20" src="https://hmchile.vtexassets.com/arquivos/ids/3513702/Polera-de-cuello-redondo-Regular-Fit---Verde---H-M-CL.jpg?v=637796835510300000" alt="" />
+          <img className="h-14 w-14 rounded-full border-2 border-blue  md:h-20 md:w-20" src="https://hmchile.vtexassets.com/arquivos/ids/3513702/Polera-de-cuello-redondo-Regular-Fit---Verde---H-M-CL.jpg?v=637796835510300000" alt="" />
+          <img className="h-14 w-14 rounded-full border-2 border-blue  md:h-20 md:w-20" src="https://hmchile.vtexassets.com/arquivos/ids/3513702/Polera-de-cuello-redondo-Regular-Fit---Verde---H-M-CL.jpg?v=637796835510300000" alt="" />
         </div>
       </div>
-      <div className="col-start-4 col-end-11 row-start-1 row-end-3 pr-2 md:col-start-8 md:col-end-12 md:row-start-1 md:row-end-4">
+      <div className="col-start-4 col-end-11 row-start-1 row-end-3 hidden pr-2 text-base md:col-start-8 md:col-end-12 md:row-start-1 md:row-end-4 md:block md:self-center">
         <InfoState states={packageHistory} stateActual={packageStatus} />
       </div>
-      <div className="col-start-4 col-end-11 row-start-3 row-end-5 pr-2 md:col-start-4 md:col-end-8 md:row-start-4 md:row-end-7">
+      <div className="col-start-4 col-end-11 row-start-3 row-end-5 hidden pr-2 text-base md:col-start-4 md:col-end-8 md:row-start-4 md:row-end-7 md:block">
         <InfoProducts products={products} />
       </div>
-      <div className="col-start-4 col-end-11 row-start-5 row-end-7 pr-2 md:col-start-8 md:col-end-12 md:row-start-4 md:row-end-7">
+      <div className="col-start-4 col-end-11 row-start-5 row-end-7 hidden pr-2 text-base md:col-start-8 md:col-end-12 md:row-start-4 md:row-end-7 md:block">
+        <InfoOrder saleOrder={saleOrder} packageHistory={packageHistory} />
+      </div>
+      <div className='col-start-4 col-end-11 row-start-1 row-end-7 self-center pr-2 text-sm md:hidden'>
+        <InfoState states={packageHistory} stateActual={packageStatus} />
+        <InfoProducts products={products} />
         <InfoOrder saleOrder={saleOrder} packageHistory={packageHistory} />
       </div>
       <div className="col-start-11 col-end-13 row-start-1 row-end-3 self-center justify-self-center md:col-start-4 md:col-end-8 md:row-start-1 md:row-end-4 md:self-end md:justify-self-start">
