@@ -1,29 +1,19 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import {Button, Box, Typography, Grid, Stack, Avatar, TextField, Divider} from '@mui/material'
-import InfoState from '../components/infoState'
+import {Button, Box, Typography, Grid, Avatar, Divider} from '@mui/material'
 import { Container } from '@mui/system'
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ListSubheader from '@mui/material/ListSubheader';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
-import ErrorIcon from '@mui/icons-material/Error';
-import AnnouncementIcon from '@mui/icons-material/Announcement';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import List from '@mui/material/List'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ListItemText from '@mui/material/ListItemText'
+import Collapse from '@mui/material/Collapse'
+import ExpandLess from '@mui/icons-material/ExpandLess'
+import ExpandMore from '@mui/icons-material/ExpandMore'
+import AnnouncementIcon from '@mui/icons-material/Announcement'
+import Stepper from '@mui/material/Stepper'
+import Step from '@mui/material/Step'
+import StepLabel from '@mui/material/StepLabel'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
 
 
@@ -38,47 +28,41 @@ const DetalleCompra = () => {
       })
   }, [])
 
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(true)
 
   const handleClick = () => {
-    setOpen(!open);
-  };
+    setOpen(!open)
+  }
 
   const steps = [
     '1',
     '2',
     '3',
-    "4",
-    "5"
-  ];
-  
+    '4',
+    '5'
+  ]
+
   return (
-    <>
+
     <Container
     className="flex-col sm:flex-row"
     >
 
-      <Container 
+      <Container
       className=" m-4"
-      >
-        <Typography variant="h6" component="h1" gutterBottom>
-          Compras > Estado de mi compra
-          
-        
-        </Typography>
-      </Container>
+       />
 
-        <Grid 
+        <Grid
         container
         className='w-full'
         >
 
           <Container
-          className="flex shadow-md bg-white m-4 rounded"
-          
+          className="m-4 flex rounded bg-white shadow-md"
+
           >
             <Typography variant="h10" component="h1" gutterBottom>
-              
+
             {purchases[0]?.products.map((product) => (
               <Grid container direction="row" alignItems="center">
               <Grid item margin={1}>
@@ -90,32 +74,32 @@ const DetalleCompra = () => {
               </Grid>
               <Grid item>
                   {product.productName}
-              </Grid>                    
+              </Grid>
             </Grid>
             ))}
 
-                
+
             </Typography>
           </Container>
 
           <Container
-          className="flex shadow-md bg-white m-4 rounded"
+          className="m-4 flex rounded bg-white shadow-md"
           >
-            
+
             <Typography variant="h6" component="h1" gutterBottom>
-                
+
                 {/* <InfoState states={purchases[0]?.packageHistory} stateActual={purchases[0]?.packageStatus}/> */}
                 {purchases[0]?.packageStatus}
             </Typography>
           </Container>
 
-          <Container className="flex shadow-md bg-white m-4 rounded">
+          <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
                 tercer container, link googlemaps estados paquete
             </Typography>
           </Container>
 
-          <Container className="flex shadow-md bg-white m-4 rounded">
+          <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
                 <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
                     <Stepper activeStep={1} alternativeLabel>
@@ -125,7 +109,7 @@ const DetalleCompra = () => {
                         </Step>
                         ))}
                     </Stepper>
-                    
+
                 </Box>
             </Typography>
             <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
@@ -133,24 +117,24 @@ const DetalleCompra = () => {
             </Box>
           </Container>
 
-        
-          <Container className="flex shadow-md bg-white m-4 rounded sm:bg-red-200">
+
+          <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
                 <ListItemButton>
                     <ListItemIcon>
                         <AnnouncementIcon />
                     </ListItemIcon>
                 <ListItemText primary="Ayuda con la compra" />
-                <ArrowForwardIosIcon 
-                
+                <ArrowForwardIosIcon
+
                 />
                 </ListItemButton>
             </Typography>
           </Container>
 
           <Container
-          className="flex shadow-md bg-white m-4 rounded">
-            
+          className="m-4 flex rounded bg-white shadow-md">
+
             <Typography variant="h10" component="h1" gutterBottom>
                 <List
                 className='w-full'
@@ -163,63 +147,63 @@ const DetalleCompra = () => {
                         <List component="div" disablePadding>
                             <ListItemText secondary= "Fecha de compra:"/>
                             {/* {purchases[0].products.map((product) => (
-                              
+
                               <ListItemText secondary= {product.productName}/>
                             ))} */}
-                            <Grid container direction="row" className="flex justify-between ...">
-                                <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                            <Grid container direction="row" className="flex justify-between">
+                                <Grid item sx={{textAlign:'left', alignItems:'left'}}>
                                     Fecha de venta
                                 </Grid>
-                                <Grid item sx={{textAlign:"right", alignItems:"right"}}>
+                                <Grid item sx={{textAlign:'right', alignItems:'right'}}>
                                     12 de Septiembre de 2022
-                                </Grid>                    
+                                </Grid>
                             </Grid>
                             <Divider variant="middle" />
 
-                                <Grid container direction="row" className="flex justify-between ...">
-                                    <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                                <Grid container direction="row" className="flex justify-between">
+                                    <Grid item sx={{textAlign:'left', alignItems:'left'}}>
                                         Producto 1
                                     </Grid>
-                                    <Grid item sx={{textAlign:"right", alignItems:"right"}}>
+                                    <Grid item sx={{textAlign:'right', alignItems:'right'}}>
                                         $12.000
-                                    </Grid>                    
+                                    </Grid>
                                 </Grid>
 
-                                <Grid container direction="row" className="flex justify-between ...">
-                                    <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                                <Grid container direction="row" className="flex justify-between">
+                                    <Grid item sx={{textAlign:'left', alignItems:'left'}}>
                                         Producto 2
                                     </Grid>
-                                    <Grid item sx={{textAlign:"right", alignItems:"right"}}>
+                                    <Grid item sx={{textAlign:'right', alignItems:'right'}}>
                                         $10.000
-                                    </Grid>                    
+                                    </Grid>
                                 </Grid>
 
-                                <Grid container direction="row" className="flex justify-between ...">
-                                    <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                                <Grid container direction="row" className="flex justify-between">
+                                    <Grid item sx={{textAlign:'left', alignItems:'left'}}>
                                         Producto 3
                                     </Grid>
-                                    <Grid item sx={{textAlign:"right", alignItems:"right"}}>
+                                    <Grid item sx={{textAlign:'right', alignItems:'right'}}>
                                         $14.000
-                                    </Grid>                    
+                                    </Grid>
                                 </Grid>
                             <Divider variant="middle" />
-                                <Grid container direction="row" className="flex justify-between ...">
-                                    <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                                <Grid container direction="row" className="flex justify-between">
+                                    <Grid item sx={{textAlign:'left', alignItems:'left'}}>
                                         Envío:
                                     </Grid>
-                                    <Grid item sx={{textAlign:"right", alignItems:"right"}}>
+                                    <Grid item sx={{textAlign:'right', alignItems:'right'}}>
                                         $2.000
-                                    </Grid>                    
+                                    </Grid>
                                 </Grid>
                         </List>
                         <Divider variant="middle" />
-                        <Grid container direction="row" className="flex justify-between ... font-bold">
-                            <Grid item sx={{textAlign:"left", alignItems:"left"}}>
+                        <Grid container direction="row" className="flex justify-between font-bold">
+                            <Grid item sx={{textAlign:'left', alignItems:'left'}}>
                                 Total
                             </Grid>
-                            <Grid item sx={{textAlign:"right", alignItems:"right"}} >
+                            <Grid item sx={{textAlign:'right', alignItems:'right'}} >
                                 $38.000
-                            </Grid>                    
+                            </Grid>
                         </Grid>
                     </Collapse>
                 </List>
@@ -228,7 +212,7 @@ const DetalleCompra = () => {
 
       </Grid>
     </Container>
-    </>
+
 
 
 
@@ -236,5 +220,5 @@ const DetalleCompra = () => {
   )
 }
 
-export default DetalleCompra;
+export default DetalleCompra
 

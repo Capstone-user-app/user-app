@@ -15,7 +15,7 @@ const DetalleCompra = () => {
   }, [])
   // rendererizar la lista de compras
   return (
-    <div className='bg-azul p-3'>
+    <div className='p-3'>
       <div className='rounded-2xl p-3'>
         <div className='mb-8 text-center text-2xl text-white md:text-3xl'>Mis Compras</div>
         <div className='mb-4 flex flex-row'>

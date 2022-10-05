@@ -6,8 +6,6 @@ import logo from './assets/logo_pinflag_vertical.png'
 import './App.css'
 import Footer from './components/general/footer'
 
-import DetalleCompra from './pages/purchase-details'
-import CodigoQR from './pages/QRcode'
 
 const App = () => (
   <div className="App">
