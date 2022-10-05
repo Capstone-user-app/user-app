@@ -14,7 +14,7 @@ import Stepper from '@mui/material/Stepper'
 import Step from '@mui/material/Step'
 import StepLabel from '@mui/material/StepLabel'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 
 const DetalleCompra = () => {
   const [purchases, setPurchase] = useState()
@@ -43,31 +43,35 @@ const DetalleCompra = () => {
     'Entregado al cliente'
   ]
 
-  let text = ''
-  let text2 = ''
+  let textStatus = ''
+  let textStatus2 = ''
+  let textStatus3 = ''
+  let textStatus4 = ''
   let statuscolor = true
 
   if (status === 1){
-    text = 'Comprado'
-    text2 =  `comprado el día ${ purchases?.packageHistory[0]?.date.substring(0,10)}, 
-    la dirección de entrega esta fijada a ${ purchases?.deliveryAddress}`
+    textStatus = 'Comprado'
+    textStatus2 =  `Fecha de compra: ${purchases?.packageHistory[0]?.date.substring(0,10)}`
+
   } else if (status === 2){
-    text = 'Procesado'
-    text2 =  `Procesado el día ${ purchases?.packageHistory[1]?.date.substring(0,10)}`
+    textStatus = 'Procesado'
+    textStatus2 =  `Fecha proceso validado: ${purchases?.packageHistory[1]?.date.substring(0,10)}`
+    textStatus3 = `Tiempo de Despacho estimado: ${ purchases?.shippingCost?.delivery_time} desde la fecha de compra`
+
   }else if (status === 3){
-    text = 'En camino'
-    text2 =  `Pedido será entregado por 
-     ${ purchases?.shippingCost?.courier} con un tiempo de delivery de 
-     ${ purchases?.shippingCost?.delivery_time} desde la fecha de compra, a la dirección ${ purchases?.deliveryAddress}`
+    textStatus = 'En camino'
+    textStatus2 =  `Delivery realizado por: ${purchases?.shippingCost?.courier}`
+    textStatus3 = `Direccion Entrega: ${purchases?.deliveryAddress}`
+
   }else if (status === 4){
-    text = 'Recepcionado por punto'
-    text2 =  `Despachado por ${ purchases?.shippingCost?.courier} y recepcionado el día ${ purchases?.packageHistory[3]?.date.substring(0,10)}
-    en la dirección ${ purchases?.deliveryAddress}. Esperando a ser retirado por
-    ${ purchases?.clientName}`
+    textStatus = 'Recepcionado por punto Click & Connect'
+    textStatus2 =  `Despachado por: ${ purchases?.shippingCost?.courier}`
+    textStatus3 =  `Día de recepción: ${ purchases?.packageHistory[3]?.date.substring(0,10)}`
+    textStatus4 = `Dirección entrega: ${ purchases?.deliveryAddress}.`
+
   }else if (status === 7){
-    text = 'Entregado al cliente'
-    text2 =  `Retirado el día ${ purchases?.packageHistory[4]?.date.substring(0,10)} por ${ purchases?.clientName}. 
-    Pedido despachado por ${ purchases?.shippingCost?.courier}  `
+    textStatus = 'Entregado al cliente'
+    textStatus2 =  `Retirado el día: ${ purchases?.packageHistory[4]?.date.substring(0,10)}`
     statuscolor = false
   }
 
@@ -107,16 +111,22 @@ const DetalleCompra = () => {
           <Container
           className="m-4 flex rounded bg-white shadow-md"
           >
-          <Grid container direction="row" className="flex justify-between ">
+          <Grid container direction="row" className="flex justify-between text-lg font-bold">
             {statuscolor? (
-               <Grid item className="text-left">{text}</Grid>
-            ): <Grid item className="text-left text-lblue">{text}</Grid>}
+               <Grid item className="text-left">{textStatus}</Grid>
+            ): <Grid item className="text-left text-lblue">{textStatus}</Grid>}
               <Grid item className="text-right">
               Pedido N°{purchases?.saleOrder}
               </Grid>
           </Grid>
-          <p className='my-4 text-lg'>
-            {text2}
+          <p className='my-4 text-sm'>
+            {textStatus2}
+          </p>
+          <p className='my-4 text-sm'>
+            {textStatus3}
+          </p>
+          <p className='my-4 text-sm'>
+            {textStatus4}
           </p>
           </Container>
 
