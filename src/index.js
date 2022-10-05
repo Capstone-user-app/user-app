@@ -34,7 +34,7 @@ root.render(
       <Layout>
         <Routes>
           <Route path='/' element={<App/>} />
-          <Route path='/purchase-details/:id' element={<DetalleCompra/>} />
+          <Route path='/pedidos/:id' element={<DetalleCompra/>} />
 
           <Route path="*" element={<NotFoundPage />} />
           {/* // this route is used by netlify  */}
