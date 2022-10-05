@@ -106,11 +106,7 @@ const DetalleCompra = () => {
             {purchases?.products?.map((product) => (
               <Grid container direction="row" alignItems="center">
               <Grid item margin={1}>
-                  <Avatar
-                      alt="Remy Sharp"
-                      src={product?.photoUrl[0]}
-                      sx={{ width: 25, height: 25 }}
-                  />
+                <img className="w-10 h-10 rounded" src={product?.photoUrl[0]['URLIMAGEN']} alt="Default avatar" />                  
               </Grid>
               <Grid item>
                   {product.productName}
