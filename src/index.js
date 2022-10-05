@@ -13,6 +13,7 @@ import App from './App'
 import Layout from './components/general/layout'
 import MyPurchases from './pages/myPurchases'
 import DetalleCompra from './pages/purchase-details'
+import TicketDetail from './pages/ticket-detail'
 import NotFoundPage from './pages/NotFound'
 
 // This only for deploying in netlify without conection to API
@@ -38,9 +39,11 @@ root.render(
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path='/' element={<App />} />
+          <Route path='/' element={<App/>} />
           <Route path='/pedidos' element={<MyPurchases />} />
-          <Route path='/pedidos/:id' element={<DetalleCompra />} />
+          <Route path='/pedidos/:id' element={<DetalleCompra/>} />
+          <Route path='/ticket/:id' element={<TicketDetail/>} />
+          <Route path="*" element={<NotFoundPage />} />
 
           {/* // this route is used by netlify  */}
           <Route path="/not_found" element={<NotFoundPage />} />
