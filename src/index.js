@@ -15,12 +15,16 @@ import MyPurchases from './pages/myPurchases'
 import DetalleCompra from './pages/purchase-details'
 import NotFoundPage from './pages/NotFound'
 
+// This only for deploying in netlify without conection to API
+const { worker } = require('./mocks/browser')
 
-if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line global-require
-  const { worker } = require('./mocks/browser')
-  worker.start()
-}
+worker.start()
+
+// if (process.env.NODE_ENV === 'development') {
+//   // eslint-disable-next-line global-require
+//   const { worker } = require('./mocks/browser')
+//   worker.start()
+// }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
