@@ -13,6 +13,8 @@ import App from './App'
 import Layout from './components/general/layout'
 import Login from './components/authentication/login'
 import DetalleCompra from './pages/purchase-details'
+import NotFoundPage from './pages/NotFound'
+
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line global-require
@@ -36,7 +38,10 @@ root.render(
           <Route path='/login' element={<Login/>} />
           <Route path='/purchase-details/:id' element={<DetalleCompra/>} />
           {/* <Route path='/register' element={<Register/>} /> */}
+          <Route path="*" element={<NotFoundPage />} />
 
+          {/* // this route is used by netlify  */}
+          <Route path="/not_found" element={<NotFoundPage />}/>
         </Routes>
       </Layout>
     </BrowserRouter>
