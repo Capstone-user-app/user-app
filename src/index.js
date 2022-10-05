@@ -41,7 +41,7 @@ root.render(
       <Layout>
         <Routes>
           <Route path='/' element={<App/>} />
-          <Route path='/create_ticket/:salesOrder' element={<CreateTicket/>} />
+          <Route path='/crear_ticket/:salesOrder' element={<CreateTicket/>} />
           <Route path='/pedidos' element={<MyPurchases />} />
           <Route path='/pedidos/:id' element={<DetalleCompra/>} />
           <Route path='/ticket/:id' element={<TicketDetail/>} />
