@@ -34,7 +34,7 @@ export const handlers = [
       })
     )
   }),
-  rest.get('api/purchases', (req, res, ctx) => {
+  rest.get('api/sales', (req, res, ctx) => {
     // returns a mocked list of purchases
     const sales = [
       {
@@ -43,92 +43,43 @@ export const handlers = [
         imageEcommerce: 'https://www.lippioutdoor.com/static/version1664570782/frontend/Linets/Lippi/es_AR/images/logo.png',
         packageStatus: 7,
         products: [
-            {
-                productName: 'Polera roja',
-                photoUrl: [
-                {
-                    'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
-                }
-                ]
-            },
-            {
-                productName: 'Polera negra',
-                photoUrl: [
-                {
-                    'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
-                },
-                {
-                    'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
-                }
-                ]
-            },
-            {
-              productName: 'Polera roja',
-              photoUrl: [
-              {
-                  'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
-              }
-              ]
-            },
-            {
-              productName: 'Polera roja',
-              photoUrl: [
-              {
-                  'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
-              }
-              ]
-            }
-        ],
-        packageHistory: [
-            {
-              packageStatus: 1,
-              date: '2022-03-11T02:27:35.243Z'
-            },
-            {
-              packageStatus: 2,
-              date: '2022-03-11T02:30:26.493Z'
-            },
-            {
-              packageStatus: 3,
-              date: '2022-03-11T02:31:25.020Z'
-            },
-            {
-              packageStatus: 4,
-              date: '2022-03-11T02:35:56.873Z'
-            },
-            {
-              packageStatus: 7,
-              date: '2022-03-11T02:38:37.067Z'
-            }
-        ]
-    },
-    {
-      saleOrder: '001234567',
-      Ecommerce: 'Lippi',
-      imageEcommerce: null,
-      packageStatus: 7,
-      products: [
           {
-              productName: 'Polera roja',
-              photoUrl: [
+            productName: 'Polera roja',
+            photoUrl: [
               {
-                  'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
               }
-              ]
+            ]
           },
           {
-              productName: 'Polera negra',
-              photoUrl: [
+            productName: 'Polera negra',
+            photoUrl: [
               {
-                  'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
               },
               {
-                  'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
               }
-              ]
+            ]
+          },
+          {
+            productName: 'Polera roja',
+            photoUrl: [
+              {
+                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+              }
+            ]
+          },
+          {
+            productName: 'Polera roja',
+            photoUrl: [
+              {
+                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+              }
+            ]
           }
-      ],
-      packageHistory: [
+        ],
+        packageHistory: [
           {
             packageStatus: 1,
             date: '2022-03-11T02:27:35.243Z'
@@ -149,8 +100,57 @@ export const handlers = [
             packageStatus: 7,
             date: '2022-03-11T02:38:37.067Z'
           }
-      ]
-  }
+        ]
+      },
+      {
+        saleOrder: '001234567',
+        Ecommerce: 'Lippi',
+        imageEcommerce: null,
+        packageStatus: 7,
+        products: [
+          {
+            productName: 'Polera roja',
+            photoUrl: [
+              {
+                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+              }
+            ]
+          },
+          {
+            productName: 'Polera negra',
+            photoUrl: [
+              {
+                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+              },
+              {
+                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+              }
+            ]
+          }
+        ],
+        packageHistory: [
+          {
+            packageStatus: 1,
+            date: '2022-03-11T02:27:35.243Z'
+          },
+          {
+            packageStatus: 2,
+            date: '2022-03-11T02:30:26.493Z'
+          },
+          {
+            packageStatus: 3,
+            date: '2022-03-11T02:31:25.020Z'
+          },
+          {
+            packageStatus: 4,
+            date: '2022-03-11T02:35:56.873Z'
+          },
+          {
+            packageStatus: 7,
+            date: '2022-03-11T02:38:37.067Z'
+          }
+        ]
+      }
     ]
 
     // return a mocked list of purchases and status 200

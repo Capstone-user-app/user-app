@@ -12,6 +12,7 @@ import reportWebVitals from './reportWebVitals'
 
 import Layout from './components/general/layout'
 import Login from './components/authentication/login'
+import MyPurchases from './pages/myPurchases'
 
 
 if (process.env.NODE_ENV === 'development') {
@@ -32,8 +33,9 @@ root.render(
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path='/' element={<App/>} />
-          <Route path='/login' element={<Login/>} />
+          <Route path='/' element={<App />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/mypurchases' element={<MyPurchases />} />
           {/* <Route path='/register' element={<Register/>} /> */}
 
         </Routes>
