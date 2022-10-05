@@ -1,4 +1,8 @@
 <!-- Linter Passing Banner -->
+## Guidelines tests
+Para los tests utilizaremos la libreria React Testing Library.
+Los tests se deben crear en la carpeta [src/components/__tests__](src/components/__tests__) en caso de que sea un test para un componente o en [src/pages/__tests__](src/pages/__tests__) si es un test de una página. En ambas carpetas pueden encontrar un ejemplo simple de tests.
+Para más detalles ver la documentación de [React Testing Library](https://testing-library.com/docs/react-testing-library/cheatsheet)
 
 # Guidelines de desarrollo y estilo
 
