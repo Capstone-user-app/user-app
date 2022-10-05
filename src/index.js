@@ -13,6 +13,7 @@ import reportWebVitals from './reportWebVitals'
 import Layout from './components/general/layout'
 import Login from './components/authentication/login'
 import MyPurchases from './pages/myPurchases'
+import NotFoundPage from './pages/NotFound'
 
 
 if (process.env.NODE_ENV === 'development') {
@@ -36,8 +37,10 @@ root.render(
           <Route path='/' element={<App />} />
           <Route path='/login' element={<Login />} />
           <Route path='/mypurchases' element={<MyPurchases />} />
-          {/* <Route path='/register' element={<Register/>} /> */}
+          <Route path="*" element={<NotFoundPage />} />
 
+          {/* // this route is used by netlify  */}
+          <Route path="/not_found" element={<NotFoundPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
