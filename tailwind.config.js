@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -7,10 +7,10 @@ module.exports = {
         blue: '#173554',
         black: '#0C0f0F',
         white: '#FCF7F8',
-        brown: '#928779'
+        brown: '#928779',
+        green: '#22c55e'
       }
-    }
-  },
-  important: '#root',
-  plugins: []
+    },
+    plugins: []
+  }
 }

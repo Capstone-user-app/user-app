@@ -45,7 +45,7 @@ const PurchaseCard = (props) => {
         <img src={imageEcommerce} alt="logo" className='h-10 w-16 object-contain' />
       </div>
       <div className="col-start-11 col-end-13 row-start-3 row-end-5 place-self-center md:col-start-12 md:col-end-13 md:row-start-1 md:row-end-7">
-        <IconButton onClick={() => history(`/purchase-details/${saleOrder}`)} aria-label="detalle" size="large">
+        <IconButton onClick={() => history(`/pedidos/${saleOrder}`)} aria-label="detalle" size="large">
           <ArrowForwardIosIcon />
         </IconButton>
       </div>

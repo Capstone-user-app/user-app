@@ -7,12 +7,12 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import App from './App'
 import reportWebVitals from './reportWebVitals'
 
+import App from './App'
 import Layout from './components/general/layout'
-import Login from './components/authentication/login'
 import MyPurchases from './pages/myPurchases'
+import DetalleCompra from './pages/purchase-details'
 import NotFoundPage from './pages/NotFound'
 
 
@@ -36,10 +36,11 @@ root.render(
         <Routes>
           <Route path='/' element={<App />} />
           <Route path='/pedidos' element={<MyPurchases />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path='/pedidos/:id' element={<DetalleCompra />} />
 
           {/* // this route is used by netlify  */}
           <Route path="/not_found" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
