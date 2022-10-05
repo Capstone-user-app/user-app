@@ -34,8 +34,9 @@ root.render(
         <Routes>
           <Route path='/' element={<App/>} />
           <Route path="*" element={<NotFoundPage />} />
-          {/* <Route path='/register' element={<Register/>} /> */}
 
+          {/* // this route is used by netlify  */}
+          <Route path="/not_found" element={<NotFoundPage />}/>
         </Routes>
       </Layout>
     </BrowserRouter>
