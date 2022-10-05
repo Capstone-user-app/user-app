@@ -46,8 +46,8 @@ const MyPurchases = () => {
   }, [])
   // rendererizar la lista de compras
   return (
-    <div className='bg-blue p-3'>
-      <div className='rounded-2xl p-3'>
+    <div className='flex justify-center bg-blue p-3'>
+      <div className='rounded-2xl sm:w-4/5 sm:px-10'>
         <div className='mb-8 text-center text-2xl text-white md:text-3xl'>Mis Compras</div>
         <div className='mb-4 flex flex-row justify-evenly'>
           <Button onClick={handleClickOpen} className='basis-1/4 bg-blue ' variant="contained">Fecha</Button>
