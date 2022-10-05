@@ -115,7 +115,7 @@ const DetalleCompra = () => {
           <Grid container direction="row" className="flex justify-between text-lg font-bold">
             {statuscolor? (
                <Grid item className="text-left">{textStatus}</Grid>
-            ): <Grid item className="text-left text-lblue">{textStatus}</Grid>}
+            ): <Grid item className="text-left text-green">{textStatus}</Grid>}
               <Grid item className="text-right">
               Pedido N°{purchases?.saleOrder}
               </Grid>
@@ -137,15 +137,15 @@ const DetalleCompra = () => {
                     <Stepper activeStep={status} alternativeLabel>
                         {steps.map((label) => (
                         <Step key={label}>
-                            <StepLabel>{label}</StepLabel>
+                            <StepLabel >{label}</StepLabel>
                         </Step>
                         ))}
                     </Stepper>
                 </Box>
             </Typography>
             {status >= 5? (
-               <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
-                <Button  variant="contained" href="/QR">Genera QR para el retiro del pedido</Button>
+               <Box sx={{ width: '100%'}} padding={1} textAlign='center' >
+                <Button  variant="contained" href="/QR" >Genera QR para el retiro del pedido</Button>
               </Box>
             ): null}
           </Container>
