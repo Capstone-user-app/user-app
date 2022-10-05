@@ -32,13 +32,6 @@ const DetalleCompra = () => {
     setOpen(!open)
   }
 
-
-  let statusStepper = purchases?.packageStatus
-
-  if (statusStepper >= 5){
-    statusStepper = 7
-  }
-
   const status =  purchases?.packageStatus
 
   const steps = [
@@ -64,7 +57,7 @@ const DetalleCompra = () => {
     text = 'En camino'
     text2 =  `Pedido será entregado por 
      ${ purchases?.shippingCost?.courier} con un tiempo de delivery de 
-     ${ purchases?.shippingCost?.delivery_time}, a la dirección ${ purchases?.deliveryAddress}`
+     ${ purchases?.shippingCost?.delivery_time} desde la fecha de compra, a la dirección ${ purchases?.deliveryAddress}`
   }else if (status === 4){
     text = 'Recepcionado por punto'
     text2 =  `Despachado por ${ purchases?.shippingCost?.courier} y recepcionado el día ${ purchases?.packageHistory[3]?.date.substring(0,10)}
@@ -135,7 +128,7 @@ const DetalleCompra = () => {
           <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
                 <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
-                    <Stepper activeStep={statusStepper} alternativeLabel>
+                    <Stepper activeStep={status} alternativeLabel>
                         {steps.map((label) => (
                         <Step key={label}>
                             <StepLabel>{label}</StepLabel>
