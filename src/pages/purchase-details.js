@@ -34,17 +34,13 @@ const DetalleCompra = () => {
   }
 
 
-  let statusStepper = purchases?.packageStatus-1
+  let statusStepper = purchases?.packageStatus
 
-  if (statusStepper === 6){
-    statusStepper = 5
+  if (statusStepper >= 5){
+    statusStepper = 7
   }
 
   const status =  purchases?.packageStatus
-
-
-
-
 
   const steps = [
     'Comprado',
@@ -119,9 +115,9 @@ const DetalleCompra = () => {
                     </Stepper>
                 </Box>
             </Typography>
-            {status === 7? (
+            {status >= 5? (
                <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
-                <Button variant="contained" disabled>Genera QR para el retiro del pedido</Button>
+                <Button variant="contained" href="/QR">Genera QR para el retiro del pedido</Button>
               </Box>
             ): null}
           </Container>
@@ -193,10 +189,6 @@ const DetalleCompra = () => {
           </Container>
       </Grid>
     </Container>
-
-
-
-
 
   )
 }
