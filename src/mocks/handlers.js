@@ -47,7 +47,7 @@ export const handlers = [
             productName: 'Polera roja',
             photoUrl: [
               {
-                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+                'URLIMAGEN': 'https://hmchile.vtexassets.com/arquivos/ids/3513702/Polera-de-cuello-redondo-Regular-Fit---Verde---H-M-CL.jpg?v=637796835510300000'
               }
             ]
           },
@@ -55,7 +55,7 @@ export const handlers = [
             productName: 'Polera negra',
             photoUrl: [
               {
-                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+                'URLIMAGEN': 'https://falabella.scene7.com/is/image/Falabella/gsc_113000798_489801_1?wid=1500&hei=1500&qlt=70'
               },
               {
                 'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
@@ -66,7 +66,7 @@ export const handlers = [
             productName: 'Polera roja',
             photoUrl: [
               {
-                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+                'URLIMAGEN': 'https://falabella.scene7.com/is/image/Falabella/gsc_112914611_458594_1?wid=800&hei=800&qlt=70'
               }
             ]
           },
@@ -112,7 +112,7 @@ export const handlers = [
             productName: 'Polera roja',
             photoUrl: [
               {
-                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+                'URLIMAGEN': 'https://falabella.scene7.com/is/image/Falabella/gsc_112914611_458594_1?wid=800&hei=800&qlt=70'
               }
             ]
           },
@@ -120,10 +120,7 @@ export const handlers = [
             productName: 'Polera negra',
             photoUrl: [
               {
-                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
-              },
-              {
-                'URLIMAGEN': 'https: //via.placeholder.com/200x120.png'
+                'URLIMAGEN': 'https://falabella.scene7.com/is/image/Falabella/gsc_113000798_489801_1?wid=1500&hei=1500&qlt=70'
               }
             ]
           }
