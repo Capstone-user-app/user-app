@@ -170,7 +170,7 @@ const CreateTicket = () => {
         </div>
         )}
         {step1 && (
-            <CreateTicketLayout title='Qué problema tuviste con esta compra?'>
+            <CreateTicketLayout title='¿Qué problema tuviste con esta compra?'>
                 {Object.keys(reasons).map((key) => (
                     <div className='mt-5 grid w-9/12 grid-cols-10'>
                         <p className='col-span-9'>{reasons[key]}</p>
