@@ -21,9 +21,9 @@ const PurchaseCard = (props) => {
   return (
     <div className="mb-3 grid grid-cols-12 grid-rows-6 rounded-md bg-white py-3 pr-2 shadow-lg md:py-8">
       <div className="col-start-1 col-end-4 row-start-1 row-end-7 place-self-center">
-        <div className="flex flex-col -space-y-2 -space-x-0 lg:flex-row lg:-space-x-2 lg:-space-y-0">
+        <div className="mx-1 flex  flex-col space-y-2 -space-x-0 lg:flex-row lg:space-x-2 lg:-space-y-0">
           {products.slice(0, 3).map((prod) => (
-            <img className="h-14 w-14 rounded-full border-2 border-blue md:h-20 md:w-20" src={prod.photoUrl[0].URLIMAGEN} alt="" />
+              <img className="h-10 w-10 grow rounded-md object-fill sm:h-14 sm:w-14 md:h-16 md:w-16" src={prod.photoUrl[0].URLIMAGEN} alt="" />
           ))}
         </div>
       </div>
