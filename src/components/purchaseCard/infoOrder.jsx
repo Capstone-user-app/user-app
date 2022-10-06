@@ -7,7 +7,7 @@ const InfoOrder = (props) => {
     const { saleOrder, packageHistory } = props
 
     return (
-        <div className='text-xs font-extralight text-gray-500 md:text-base md:font-normal'>
+        <div className='text-xs font-extralight text-gray md:text-base md:font-normal'>
             <div className='flex flex-row'>
                 <div className='mr-1  '>Orden: </div>
                 <div className=''>{saleOrder}</div>

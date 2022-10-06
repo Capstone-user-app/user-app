@@ -48,11 +48,11 @@ const DetalleCompra = () => {
   const status =  purchases?.packageStatus
 
   const steps = [
-    'Comprado',
-    'Procesado',
-    'En camino',
-    'Recepcionado por punto',
-    'Entregado al cliente'
+    ['Comprado', purchases?.packageHistory[0]?.date.substring(0,10)],
+    ['Procesado', purchases?.packageHistory[1]?.date.substring(0,10)],
+    ['En camino', purchases?.packageHistory[2]?.date.substring(0,10)],
+    ['Recepcionado por punto', purchases?.packageHistory[3]?.date.substring(0,10)],
+    ['Entregado al cliente', purchases?.packageHistory[4]?.date.substring(0,10)]
   ]
 
   let textStatus = ''
@@ -121,7 +121,7 @@ const DetalleCompra = () => {
           >
           <Grid container direction="row" className="flex justify-between text-lg font-bold">
             {statuscolor? (
-               <Grid item className="text-left">{textStatus}</Grid>
+               <Grid item className="text-left text-blue">{textStatus}</Grid>
             ): <Grid item className="text-left text-green">{textStatus}</Grid>}
               <Grid item className="text-right">
               Pedido N°{purchases?.saleOrder}
@@ -144,7 +144,10 @@ const DetalleCompra = () => {
                     <Stepper activeStep={status}  orientation='vertical'>
                         {steps.map((label) => (
                         <Step key={label} >
-                            <StepLabel >{label}</StepLabel>
+                            <StepLabel>
+                              <Typography className='text-lg'>{label[0]} </Typography>
+                              <Typography className='text-lg'>{label[1]} </Typography>
+                              </StepLabel>
                         </Step>
                         ))}
                     </Stepper>
