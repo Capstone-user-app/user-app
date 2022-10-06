@@ -52,8 +52,8 @@ const DetalleTicket = () => {
                 <Grid containernclassName='w-full'>
                 <Container className="m-4 flex rounded bg-white shadow-md">
                 <h1>Mi ticket es: {ticket[0]?.ticketId}</h1>
-                <h1>El estado del ticket es: {ticket[0].ticketStatus}</h1>
-                <h1>El tipo de ticket es: {ticket[0].ticketTipe}</h1>
+                <h1>El estado del ticket es: {ticket[0]?.ticketStatus}</h1>
+                <h1>El tipo de ticket es: {ticket[0]?.ticketTipe}</h1>
                 </Container>
                 </Grid>
             <Container className="m-4 flex rounded bg-white shadow-md">
