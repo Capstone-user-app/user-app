@@ -7,22 +7,18 @@ import Login from '../authentication/login'
 import Logout from '../authentication/logout'
 import Loading from '../ui/loading'
 
-
-
-const MiniNavbar = ({OpenClose}) => {
+const MiniNavbar = ({ OpenClose }) => {
     const { isAuthenticated, isLoading } = useAuth0()
-    if (isLoading) return (<Loading/>)
+    if (isLoading) return (<Loading />)
 
     return (
         <Box className="absolute inset-y-auto right-0 grid w-40 items-center bg-white text-center shadow-xl shadow-blue/40" onClick={OpenClose}>
-            {!isAuthenticated &&  <>
-                <Link to="/pedidos">
-                    Mis Pedidos
-                </Link>
-                <Login />
+            {!isAuthenticated && <Login />}
+            {isAuthenticated &&  <>
+                <Link to="/pedidos">Mis Pedidos</Link>
+                <Logout classN="p-2"/>
             </>}
-            {isAuthenticated &&  <Logout classN="p-2"/>}
         </Box>
     )
-    }
+}
 export default MiniNavbar

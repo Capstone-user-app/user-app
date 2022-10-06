@@ -28,14 +28,12 @@ const Navbar = ({ OpenClose }) => {
                     </svg>
 
                 </Box>
-                <div className="hidden pr-6 md:block ">
-                    {!isAuthenticated && <div className='space-x-6 p-2'>
-                        <Link to="/pedidos">
-                            Mis Pedidos
-                        </Link>
-                        <Login />
-                    </div>}
-                    {isAuthenticated && <Logout classN="p-4" />}
+                <div className="hidden space-x-6 md:block">
+                    {!isAuthenticated && <Login />}
+                    {isAuthenticated && <>
+                        <Link to="/pedidos">Mis Pedidos</Link>
+                        <Logout classN="p-4" />
+                    </>}
                 </div>
 
             </div>
