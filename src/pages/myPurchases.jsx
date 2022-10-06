@@ -48,7 +48,7 @@ const MyPurchases = () => {
   return (
     <div className='bg-white p-3'>
       <div className='rounded-2xl p-3'>
-        <div className='mb-8 text-center text-2xl md:text-3xl'>Mis pedidos</div>
+        <div className='mb-4 text-center text-2xl md:text-3xl'>Mis pedidos</div>
         <div className='mb-4 flex flex-row justify-evenly'>
           <button type='button' onClick={handleClickOpen} className='rounded-full bg-lblue py-2 px-4 text-sm font-medium text-white hover:bg-blue  md:text-lg'>Fecha</button>
           <button type='button' className='rounded-full bg-lblue py-2 px-4 text-sm font-medium text-white hover:bg-blue md:text-lg' >Ecommerce</button>
