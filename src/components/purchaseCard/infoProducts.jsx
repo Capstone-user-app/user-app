@@ -31,7 +31,7 @@ const InfoProducts = (props) => {
   }
   return (
     <div>
-      <p className='pb-1'>{textProducts}</p>
+      <p className='pb-1 text-sm'>{textProducts}</p>
     </div>
   )
 }
