@@ -22,9 +22,9 @@ const PurchaseCard = (props) => {
     <div className="mb-3 grid grid-cols-12 grid-rows-6 rounded-md bg-white py-3 pr-2 shadow-lg md:py-8">
       <div className="col-start-1 col-end-4 row-start-1 row-end-7 place-self-center">
         <div className="flex flex-col -space-y-2 -space-x-0 lg:flex-row lg:-space-x-2 lg:-space-y-0">
-          <img className="h-14 w-14 rounded-full border-2 border-blue md:h-20 md:w-20" src="https://hmchile.vtexassets.com/arquivos/ids/3513702/Polera-de-cuello-redondo-Regular-Fit---Verde---H-M-CL.jpg?v=637796835510300000" alt="" />
-          <img className="h-14 w-14 rounded-full border-2 border-blue  md:h-20 md:w-20" src="https://hmchile.vtexassets.com/arquivos/ids/3513702/Polera-de-cuello-redondo-Regular-Fit---Verde---H-M-CL.jpg?v=637796835510300000" alt="" />
-          <img className="h-14 w-14 rounded-full border-2 border-blue  md:h-20 md:w-20" src="https://hmchile.vtexassets.com/arquivos/ids/3513702/Polera-de-cuello-redondo-Regular-Fit---Verde---H-M-CL.jpg?v=637796835510300000" alt="" />
+          {products.slice(0, 3).map((prod) => (
+            <img className="h-14 w-14 rounded-full border-2 border-blue md:h-20 md:w-20" src={prod.photoUrl[0].URLIMAGEN} alt="" />
+          ))}
         </div>
       </div>
       <div className="col-start-4 col-end-11 row-start-1 row-end-3 hidden pr-2 text-base md:col-start-8 md:col-end-12 md:row-start-1 md:row-end-4 md:block md:self-center">

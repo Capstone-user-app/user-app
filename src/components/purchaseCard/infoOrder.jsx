@@ -7,14 +7,14 @@ const InfoOrder = (props) => {
     const { saleOrder, packageHistory } = props
 
     return (
-        <div>
+        <div className='text-xs font-extralight text-gray-500 md:text-base md:font-normal'>
             <div className='flex flex-row'>
-                <div className='mr-1 font-bold text-gray-500 '>Orden: </div>
-                <div className='text-gray-500'>{saleOrder}</div>
+                <div className='mr-1  '>Orden: </div>
+                <div className=''>{saleOrder}</div>
             </div>
             <div className='flex flex-row'>
-                <div className='mr-1 flex-initial font-bold text-gray-500 '>Fecha de compra:</div>
-                <div className='flex-initial text-gray-500 '><DateDisplay date={packageHistory[0].date} /></div>
+                <div className='mr-1 flex-initial  '>Fecha de compra:</div>
+                <div className='flex-initial  '><DateDisplay date={packageHistory[0].date} /></div>
             </div>
         </div>
     )
