@@ -200,7 +200,7 @@ const CreateTicket = () => {
                     <TaskAltIcon style={{fontSize: 100, color: '4BB543'}}  />
                 </div>
             <div>
-                <button type='button' className='mt-5 rounded-md bg-blue p-2 text-white' onClick={() => {navigate(-1)}}>Entendido</button>
+                <button type='button' className='mt-5 rounded-md bg-blue p-2 text-white' onClick={() => {navigate(`/ticket/${salesOrder}`)}}>Entendido</button>
             </div>
             </CreateTicketLayout>
 
