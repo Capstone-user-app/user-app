@@ -26,7 +26,7 @@ const Layout = ({children}) => {
     }
 
     return (
-        <div className="h-screen">
+        <div className="flex min-h-screen flex-col">
             <Navbar OpenClose={toggleOpen}/>
             {isOpen && <MiniNavbar OpenClose={toggleOpen}/>}
             {children}
