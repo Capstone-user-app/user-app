@@ -46,12 +46,12 @@ const MyPurchases = () => {
   }, [])
   // rendererizar la lista de compras
   return (
-    <div className='flex justify-center bg-blue p-3'>
-      <div className='rounded-2xl sm:w-4/5 sm:px-10'>
-        <div className='mb-8 text-center text-2xl text-white md:text-3xl'>Mis Compras</div>
+    <div className='bg-white p-3'>
+      <div className='rounded-2xl p-3'>
+        <div className='mb-8 text-center text-2xl md:text-3xl'>Mis Compras</div>
         <div className='mb-4 flex flex-row justify-evenly'>
-          <Button onClick={handleClickOpen} className='basis-1/4 bg-blue ' variant="contained">Fecha</Button>
-          <Button className='basis-1/4 bg-blue ' variant="contained" >Ecommerce</Button>
+          <Button onClick={handleClickOpen} className='mx-2 basis-1/2 rounded-3xl bg-blue md:basis-1/6 ' variant="contained">Fecha</Button>
+          <Button className='mx-2 basis-1/2 rounded-3xl bg-blue md:basis-1/6' variant="contained" >Ecommerce</Button>
           <Dialog open={open} onClose={handleClose}>
             <DialogTitle>Define un rango de fecha a filtrar</DialogTitle>
             <DialogContent className='flex justify-between'>
