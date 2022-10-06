@@ -182,7 +182,7 @@ const DetalleCompra = () => {
           </Container>
           <Container className="m-4 flex rounded bg-white shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
-                <ListItemButton onClick={() => history(`/crear_ticket/:${purchases?.saleOrder}`)}>
+                <ListItemButton onClick={() => history(`/crear_ticket/${purchases?.saleOrder}`)}>
                     <ListItemIcon>
                         <AnnouncementIcon />
                     </ListItemIcon>
