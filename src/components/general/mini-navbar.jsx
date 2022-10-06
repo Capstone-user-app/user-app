@@ -12,11 +12,11 @@ const MiniNavbar = ({ OpenClose }) => {
     if (isLoading) return (<Loading />)
 
     return (
-        <Box className="absolute inset-y-auto right-0 grid w-40 items-center bg-white text-center shadow-xl shadow-blue/40" onClick={OpenClose}>
+        <Box className="absolute top-16 right-0 grid w-40 items-center rounded-b-md bg-white p-2 text-center text-lg shadow-xl shadow-blue/40 " onClick={OpenClose}>
             {!isAuthenticated && <Login />}
             {isAuthenticated &&  <>
-                <Link to="/pedidos">Mis Pedidos</Link>
-                <Logout classN="p-2"/>
+                <Link to="/pedidos" className='hover:bg-gray'>Mis Pedidos</Link>
+                <Logout className="p-2 hover:bg-gray"/>
             </>}
         </Box>
     )
