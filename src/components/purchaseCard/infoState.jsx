@@ -42,6 +42,7 @@ const InfoState = (props) => {
       </div>
     ) : <div>
       <p className='pb-1 font-bold text-[#182ACB]'>{text}</p>
+      <p className='pb-1 text-[#173554]'> <DateDisplay date={stateDate} /> </p>
     </div>
   )
 }

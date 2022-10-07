@@ -17,10 +17,10 @@ import DetalleCompra from './pages/purchase-details'
 import TicketDetail from './pages/ticket-detail'
 import NotFoundPage from './pages/NotFound'
 
-// This only for deploying in netlify without conection to API
-const { worker } = require('./mocks/browser')
+// // This only for deploying in netlify without conection to API
+// const { worker } = require('./mocks/browser')
 
-worker.start()
+// worker.start()
 
 // if (process.env.NODE_ENV === 'development') {
 //   // eslint-disable-next-line global-require

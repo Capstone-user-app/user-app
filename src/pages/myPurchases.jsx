@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useAuth0 } from '@auth0/auth0-react'
 import { useEffect, useState } from 'react'
 import { Button, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material'
 import PurchaseCard from '../components/purchaseCard/purchaseCard'
@@ -8,6 +9,9 @@ Hace un fetch a la API de compras en cuanto se carga la ruta.
 También hace solicitudes hace cuando se filtra por fecha. */
 
 const MyPurchases = () => {
+
+  const { getAccessTokenSilently } = useAuth0()
+
   const [purchases, setPurchase] = useState([])
   const [open, setOpen] = React.useState(false)
   const [date1, setDate1] = React.useState('')
@@ -38,12 +42,21 @@ const MyPurchases = () => {
   }
   // petición a la api de compras para el usuario actual
   useEffect(() => {
-    fetch('api/sales')
-      .then((res) => res.json())
-      .then((resJson) => {
-        setPurchase(resJson)
+    const getToken = async () => {
+      const token = await getAccessTokenSilently()
+      fetch('https://9shjd4c13a.execute-api.sa-east-1.amazonaws.com/dev/sales', {
+        mode: 'cors',
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
       })
-  }, [])
+        .then((res) => res.json())
+        .then((resJson) => {
+          setPurchase(resJson)
+        })
+    }
+    getToken()
+  }, [getAccessTokenSilently])
   // rendererizar la lista de compras
   return (
     <div className='bg-white p-3'>
