@@ -1,4 +1,4 @@
-# Este Repo fue archivo ya que por decisión del equipo docente nos tuvimos que migrar de repo
+# Este Repo fue archivado ya que por decisión del equipo docente nos tuvimos que migrar de repo
 
 <!-- Linter Passing Banner -->
 ## Guidelines tests
