@@ -138,7 +138,7 @@ const DetalleCompra = () => {
           </p>
           </Container>
 
-          <Container className="m-4 flex rounded bg-white shadow-md">
+          <Container className="m-4 flex rounded  shadow-md">
             <Typography variant="h6" component="h1" gutterBottom>
                 <Box  padding={1} textAlign='center'>
                     <Stepper activeStep={status}  orientation='vertical'>
@@ -156,7 +156,7 @@ const DetalleCompra = () => {
             {status >= 5? (
                <Box sx={{ width: '100%'}} padding={1} textAlign='center'>
 
-                <Button variant="contained" onClick={handleClickOpenDialog}>Genera QR para el retiro del pedido</Button>
+                <Button variant="contained" onClick={handleClickOpenDialog} >Genera QR para el retiro del pedido</Button>
                 <Dialog
                 open={openDialog}
                 onClose={handleCloseDialog}

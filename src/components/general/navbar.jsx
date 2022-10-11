@@ -1,39 +1,36 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Box } from '@mui/material'
-import { useAuth0 } from '@auth0/auth0-react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
+import DensityMediumIcon from '@mui/icons-material/DensityMedium'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import logo from '../../assets/logo_pinflag_vertical.png'
-import Loading from '../ui/loading'
-import Login from '../authentication/login'
-import Logout from '../authentication/logout'
 
-const Navbar = ({ OpenClose }) => {
+const Navbar = () => {
 
-    const { isAuthenticated, isLoading } = useAuth0()
+    const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location.pathname)
 
-    if (isLoading) return (<Loading />)
+    let mostrar = 'block'
 
-    return (
+    if (location.pathname === '/pedidos' || location.pathname.includes('/crear_ticket')){
+        mostrar = 'none'
+    }
+
+    return(
         <nav className="relative flex h-16 items-center justify-between bg-white px-2 py-2.5 text-black shadow-lg sm:px-4">
             <div className='container mx-auto flex flex-wrap items-center justify-between'>
-
-                <div className="flex items-center">
+                <div className="flex items-center ">
+                    <ArrowBackIcon sx={{ display: {xs: mostrar, md: mostrar, lg:mostrar, xl: mostrar} }} onClick={() => navigate(-1)} />
+                </div>
+                <div className=" space-x-6 md:block">
                     <Link to="/" className="">
                         <img src={logo} className="mr-3 h-8 sm:h-12 " alt="logo" />
                     </Link>
                 </div>
-                <Box className="cursor-pointer px-4 md:hidden" onClick={OpenClose}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-
-                </Box>
-                <div className="hidden space-x-6 md:block">
-                    {!isAuthenticated && <Login />}
-                    {isAuthenticated && <>
-                        <Link to="/pedidos">Mis Pedidos</Link>
-                        <Logout classN="p-4" />
-                    </>}
+                <div className="">
+                    <Link to="/" className="">
+                        <DensityMediumIcon className=""/>
+                    </Link>
                 </div>
 
             </div>
