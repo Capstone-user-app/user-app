@@ -14,7 +14,6 @@ const Navbar = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(location.pathname)
 
     let mostrar = 'visible'
 
@@ -37,8 +36,6 @@ const Navbar = () => {
         window.removeEventListener('resize', handleWindowResize)
         }
     }, [])
-
-    console.log(windowSize.innerWidth)
 
     if(windowSize.innerWidth <= 420){
         TamañoMenu = 'h-8'
@@ -65,6 +62,5 @@ const Navbar = () => {
         </nav>
     )
 }
-
 
 export default Navbar
